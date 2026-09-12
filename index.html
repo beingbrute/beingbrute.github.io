@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditya Ranjan — Data Analyst Portfolio</title>
+<meta name="description" content="Data analyst portfolio: retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply case studies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#11151b;
+    --panel:#171d27;
+    --hairline:rgba(233,231,224,0.12);
+    --hairline-strong:rgba(233,231,224,0.22);
+    --text:#e9e7e0;
+    --muted:#98a0b0;
+    --amber:#eab04a;
+    --teal:#4fb3a9;
+    --steel:#89a3d8;
+    --maxw:960px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none !important; transition:none !important;}
+  }
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--text);
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,nav,.mono,button,.tag,.stat-label,.kicker{font-family:'Space Grotesk',system-ui,sans-serif;}
+  .mono, .stat-num{font-family:'IBM Plex Mono', monospace;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;border-radius:4px;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  .prose{max-width:640px;}
+
+  /* Nav */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(17,21,27,0.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--hairline);
+  }
+  .navrow{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:var(--maxw); margin:0 auto;}
+  .wordmark{font-weight:600; font-size:1.05rem; letter-spacing:0.01em;}
+  .navlinks{display:flex; gap:28px; font-size:0.92rem;}
+  .navlinks a{color:var(--muted); transition:color .15s ease;}
+  .navlinks a:hover{color:var(--text);}
+  .navlinks{display:none;}
+  @media(min-width:720px){ .navlinks{display:flex;} }
+
+  /* Hero */
+  .hero{padding:76px 24px 40px;}
+  .kicker{font-size:0.85rem; color:var(--muted); margin:0 0 14px; font-weight:500;}
+  h1{font-size:clamp(2.3rem,5vw,3.6rem); line-height:1.08; margin:0 0 20px; font-weight:600; letter-spacing:-0.01em;}
+  .lede{font-size:1.15rem; color:var(--text); max-width:640px; margin:0 0 36px;}
+  .lede .muted-inline{color:var(--muted);}
+  .cta-row{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:56px;}
+  .btn{
+    display:inline-block; padding:11px 20px; border-radius:6px; font-size:0.95rem; font-weight:500;
+    border:1px solid var(--hairline-strong); transition:border-color .15s ease, background .15s ease;
+  }
+  .btn:hover{border-color:var(--amber); background:rgba(234,176,74,0.08); box-shadow:0 0 22px rgba(234,176,74,0.3); transform:translateY(-2px);}
+  .btn.primary{background:var(--text); color:var(--ink); border-color:var(--text);}
+  .btn.primary:hover{background:var(--amber); border-color:var(--amber);}
+
+  .proof-strip{
+    display:grid; grid-template-columns:1fr; gap:0;
+    border-top:1px solid var(--hairline);
+  }
+  @media(min-width:720px){ .proof-strip{grid-template-columns:repeat(3,1fr);} }
+  .proof{
+    padding:26px 0; border-bottom:1px solid var(--hairline);
+    display:block;
+  }
+  @media(min-width:720px){
+    .proof{border-bottom:none; border-right:1px solid var(--hairline); padding:26px 24px;}
+    .proof:last-child{border-right:none;}
+    .proof:first-child{padding-left:0;}
+  }
+  .proof-num{font-size:clamp(1.8rem,3.4vw,2.4rem); font-weight:600; color:var(--amber); margin-bottom:8px; transition:text-shadow .2s ease;}
+  .proof-desc{font-size:0.92rem; color:var(--muted); line-height:1.5; font-family:'Space Grotesk',sans-serif; transition:color .15s ease;}
+  a.proof{transition:transform .15s ease;}
+  a.proof:hover{transform:translateY(-3px);}
+  a.proof:hover .proof-desc{color:var(--text);}
+  a.proof:hover .proof-num{text-shadow:0 0 18px rgba(234,176,74,0.55);}
+
+  /* Section shell */
+  section{padding:64px 24px;}
+  .section-head{margin-bottom:36px;}
+  h2{font-size:clamp(1.6rem,3vw,2.1rem); font-weight:600; margin:0 0 10px;}
+  .section-sub{color:var(--muted); font-size:1rem; max-width:560px;}
+
+  /* Skills */
+  .skills-groups{display:grid; gap:22px;}
+  @media(min-width:720px){ .skills-groups{grid-template-columns:repeat(2,1fr);} }
+  .skill-group h3{font-size:0.95rem; color:var(--muted); font-weight:500; margin:0 0 12px; text-transform:none;}
+  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-size:0.85rem; padding:6px 12px; border:1px solid var(--hairline-strong); border-radius:100px; color:var(--text);
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease; display:inline-block;
+  }
+  .chip:hover{border-color:var(--amber); transform:scale(1.06); box-shadow:0 0 14px rgba(234,176,74,0.25);}
+
+  /* Projects */
+  .project{border-top:3px solid var(--accent); background:var(--panel);}
+  .project--teal{--accent:var(--teal);}
+  .project--amber{--accent:var(--amber);}
+  .project--steel{--accent:var(--steel);}
+  .project-inner{max-width:var(--maxw); margin:0 auto; padding:56px 24px;}
+  .project-eyebrow{color:var(--accent); font-size:0.88rem; font-weight:500; margin:0 0 10px;}
+  .project h2{margin-bottom:14px;}
+  .project-problem{font-size:1.05rem; max-width:660px; margin-bottom:34px;}
+  .kpi-row{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--hairline);
+    border:1px solid var(--hairline); margin-bottom:40px; border-radius:6px; overflow:hidden;
+  }
+  @media(min-width:720px){ .kpi-row{grid-template-columns:repeat(4,1fr);} }
+  .kpi{background:var(--panel); padding:20px 18px;}
+  .kpi-num{font-size:1.5rem; font-weight:600; color:var(--accent); margin-bottom:6px; cursor:default;}
+  .kpi-label{font-size:0.82rem; color:var(--muted); line-height:1.4;}
+
+  .shot-grid{display:grid; grid-template-columns:1fr; gap:22px; margin-bottom:36px;}
+  @media(min-width:720px){ .shot-grid{grid-template-columns:repeat(2,1fr);} }
+  figure{margin:0;}
+  .shot-frame{border:1px solid var(--hairline-strong); border-radius:6px; overflow:hidden; background:#0c0f13; transition:border-color .2s ease;}
+  .shot-frame:hover{border-color:var(--hairline-strong);}
+  .shot-frame img{width:100%; height:auto; transition:transform .45s ease;}
+  .shot-frame:hover img{transform:scale(1.045);}
+  figcaption{font-size:0.82rem; color:var(--muted); margin-top:8px; font-family:'Space Grotesk',sans-serif;}
+
+  .demonstrates{margin-bottom:32px;}
+  .demonstrates h3{font-size:1rem; font-weight:600; margin:0 0 14px; color:var(--text);}
+  .demonstrates ul{margin:0; padding:0; list-style:none;}
+  .demonstrates li{
+    padding:10px 0 10px 20px; border-top:1px solid var(--hairline); position:relative; font-size:0.98rem;
+  }
+  .demonstrates li:first-child{border-top:none;}
+  .demonstrates li::before{content:"·"; position:absolute; left:0; color:var(--accent); font-weight:700; font-size:1.3rem; line-height:1;}
+
+  .project-footer{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; padding-top:24px; border-top:1px solid var(--hairline);}
+  .tool-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .tool-tags .chip{border-color:var(--hairline);}
+  .project-links{font-size:0.9rem; color:var(--muted);}
+  .project-links a{color:var(--accent); border-bottom:1px solid transparent;}
+  .project-links a:hover{border-bottom-color:var(--accent);}
+
+  /* Compare */
+  .compare-hint{color:var(--muted); font-size:0.92rem; margin-bottom:24px;}
+  .table-scroll{overflow-x:auto; border:1px solid var(--hairline); border-radius:6px;}
+  table.matrix{border-collapse:collapse; width:100%; min-width:560px; font-size:0.92rem;}
+  table.matrix th, table.matrix td{padding:12px 16px; text-align:left; border-bottom:1px solid var(--hairline);}
+  table.matrix thead th{
+    font-family:'Space Grotesk',sans-serif; font-weight:500; color:var(--muted); font-size:0.85rem;
+    cursor:pointer; user-select:none; transition:color .15s ease;
+    border-bottom:1px solid var(--hairline-strong);
+  }
+  table.matrix thead th:hover{color:var(--text);}
+  table.matrix thead th.active{color:var(--amber); text-shadow:0 0 12px rgba(234,176,74,0.4);}
+  table.matrix thead th:first-child{cursor:default;}
+  table.matrix thead th:first-child:hover{color:var(--muted);}
+  table.matrix tbody tr:hover{background:rgba(255,255,255,0.03);}
+  table.matrix tbody tr.row-dim{opacity:0.28;}
+  table.matrix td:first-child{color:var(--text); font-family:'Space Grotesk',sans-serif; font-size:0.92rem;}
+  .tick{color:var(--teal); font-weight:600;}
+  .tick.tick--dim{color:var(--muted); opacity:0.5;}
+  .dash{color:var(--hairline-strong);}
+  td.center, th.center{text-align:center;}
+
+  .glance{margin-top:44px;}
+  .glance-head{display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:16px;}
+  .glance h3{font-size:1.1rem; margin:0; font-weight:600;}
+  .source-note{font-size:0.8rem; color:var(--muted); font-family:'Space Grotesk',sans-serif;}
+  table.glance-table{width:100%; border-collapse:collapse; font-size:0.92rem;}
+  table.glance-table th, table.glance-table td{padding:12px 16px; border-bottom:1px solid var(--hairline); text-align:left; vertical-align:top;}
+  table.glance-table th{color:var(--muted); font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:0.85rem;}
+
+  /* About */
+  .about{background:var(--panel); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);}
+  .about-grid{display:grid; grid-template-columns:1fr; gap:40px; max-width:var(--maxw); margin:0 auto; padding:64px 24px;}
+  @media(min-width:820px){ .about-grid{grid-template-columns:1.1fr 0.9fr;} }
+  .about h2{font-size:clamp(1.7rem,3.2vw,2.3rem); margin:0 0 18px;}
+  .about-bio p{margin:0 0 16px; font-size:1.02rem;}
+  .about-link{display:inline-flex; align-items:center; gap:6px; color:var(--teal); font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:0.95rem; margin-top:8px; border-bottom:1px solid transparent; transition:border-color .15s ease;}
+  .about-link:hover{border-bottom-color:var(--teal);}
+  .how-i-work{list-style:none; margin:0; padding:0;}
+  .how-i-work li{display:flex; gap:16px; padding:18px 0; border-top:1px solid var(--hairline);}
+  .how-i-work li:first-child{border-top:none; padding-top:0;}
+  .how-num{font-family:'IBM Plex Mono',monospace; color:var(--steel); font-size:0.85rem; padding-top:3px; flex-shrink:0;}
+  .how-text h3{font-size:1rem; margin:0 0 6px; font-weight:600; font-family:'Space Grotesk',sans-serif;}
+  .how-text p{margin:0; font-size:0.92rem; color:var(--muted);}
+  .open-badge{display:inline-flex; align-items:center; gap:8px; margin-top:26px; font-size:0.88rem; color:var(--muted); font-family:'Space Grotesk',sans-serif;}
+  .open-dot{width:8px; height:8px; border-radius:50%; background:var(--teal); box-shadow:0 0 8px rgba(79,179,169,0.7); flex-shrink:0;}
+
+  /* Back to top */
+  .to-top{
+    position:fixed; right:24px; bottom:24px; z-index:60;
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 18px; border-radius:100px;
+    background:rgba(23,29,39,0.9); backdrop-filter:blur(8px);
+    border:1px solid var(--hairline-strong); color:var(--text);
+    font-family:'Space Grotesk',sans-serif; font-size:0.85rem; font-weight:500;
+    opacity:0; pointer-events:none; transform:translateY(8px);
+    transition:opacity .25s ease, transform .25s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .to-top.visible{opacity:1; pointer-events:auto; transform:translateY(0);}
+  .to-top:hover{border-color:var(--amber); box-shadow:0 0 22px rgba(234,176,74,0.35); transform:translateY(-2px) scale(1.04);}
+  .to-top svg{width:14px; height:14px;}
+
+  /* Footer */
+  footer{border-top:1px solid var(--hairline); padding:56px 24px 64px;}
+  .footer-inner{max-width:var(--maxw); margin:0 auto;}
+  footer h2{margin-bottom:12px;}
+  .footer-sub{color:var(--muted); max-width:520px; margin-bottom:28px;}
+  .contact-row{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:40px;}
+  .copyright{color:var(--muted); font-size:0.85rem; border-top:1px solid var(--hairline); padding-top:24px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="navrow">
+    <div class="wordmark">Aditya Ranjan</div>
+    <nav class="navlinks">
+      <a href="#about">About</a>
+      <a href="#customer">Retail revenue</a>
+      <a href="#loan">Loan risk</a>
+      <a href="#inventory">Inventory</a>
+      <a href="#compare">Compare</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero wrap" id="top">
+    <p class="kicker">Data analyst portfolio</p>
+    <h1>Three data problems,<br>worked end to end.</h1>
+    <p class="lede">I'm an aspiring data analyst who works across the full pipeline — raw files and SQL at one end, a dashboard someone actually opens at the other. <span class="muted-inline">Python, SQL, Power BI, Tableau, and a locally-run LLM, applied to retail revenue, lending risk, and inventory data.</span></p>
+    <div class="cta-row">
+      <a href="#customer" class="btn primary">View the projects</a>
+      <a href="https://github.com/beingbrute" class="btn" target="_blank" rel="noopener">GitHub profile</a>
+    </div>
+
+    <div class="proof-strip">
+      <a href="#customer" class="proof">
+        <div class="proof-num" data-count data-target="72.35" data-decimals="2" data-suffix="%">0%</div>
+        <div class="proof-desc">of known customers are repeat buyers — and they generate 96.74% of identified revenue</div>
+      </a>
+      <a href="#loan" class="proof">
+        <div class="proof-num" data-count data-target="11.61" data-decimals="2" data-suffix="%">0%</div>
+        <div class="proof-desc">portfolio-wide default rate across 255,347 loans, rising to 19.71% in the riskiest segment</div>
+      </a>
+      <a href="#inventory" class="proof">
+        <div class="proof-num" data-count data-target="97.37" data-decimals="2" data-prefix="$" data-suffix="K">$0K</div>
+        <div class="proof-desc">in revenue at risk from unfulfilled demand, traced down to the SKU</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-bio">
+        <h2>Curious by nature. Analytical by training.</h2>
+        <p>I graduated with a B.Tech in Computer Science in 2023 and I'm building a career in data analytics. I like connecting the technical work — cleaning data, writing queries, building models — to the actual business question it needs to answer.</p>
+        <p>I'm looking for an entry-level Data Analyst role where I can contribute with SQL, Python, Excel, and BI reporting that people actually use.</p>
+        <a href="https://github.com/beingbrute" class="about-link" target="_blank" rel="noopener">Explore my GitHub</a>
+        <div class="open-badge"><span class="open-dot"></span>Open to full-time, internship, and contract roles</div>
+      </div>
+      <ul class="how-i-work">
+        <li>
+          <span class="how-num">01</span>
+          <div class="how-text">
+            <h3>Start with the business question</h3>
+            <p>Define what matters, who needs the answer, and which metrics will help.</p>
+          </div>
+        </li>
+        <li>
+          <span class="how-num">02</span>
+          <div class="how-text">
+            <h3>Make the numbers trustworthy</h3>
+            <p>Validate the data, document assumptions, and reconcile results across tools.</p>
+          </div>
+        </li>
+        <li>
+          <span class="how-num">03</span>
+          <div class="how-text">
+            <h3>Make the insight usable</h3>
+            <p>Build clear dashboards and explain the decisions the analysis can support.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap" id="skills">
+    <div class="section-head">
+      <h2>What I work with</h2>
+      <p class="section-sub">Pulled straight from the tools actually used across the three projects below — nothing listed here that isn't demonstrated in a repo.</p>
+    </div>
+    <div class="skills-groups">
+      <div class="skill-group">
+        <h3>Languages &amp; querying</h3>
+        <div class="chip-row">
+          <span class="chip">Python</span>
+          <span class="chip">Pandas &amp; NumPy</span>
+          <span class="chip">SQL Server (T-SQL)</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">Snowflake SQL</span>
+          <span class="chip">DAX</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>BI, visualization &amp; modeling</h3>
+        <div class="chip-row">
+          <span class="chip">Power BI</span>
+          <span class="chip">Tableau</span>
+          <span class="chip">Power Query</span>
+          <span class="chip">Excel</span>
+          <span class="chip">Jupyter Notebook</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Data engineering</h3>
+        <div class="chip-row">
+          <span class="chip">Snowflake warehousing (RAW/STAGING/ANALYTICS)</span>
+          <span class="chip">SQL Server → MySQL migration</span>
+          <span class="chip">Data-quality remediation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Applied methods</h3>
+        <div class="chip-row">
+          <span class="chip">RFM segmentation</span>
+          <span class="chip">Cohort retention analysis</span>
+          <span class="chip">Local GenAI classification (Ollama / Qwen3:4B)</span>
+          <span class="chip">Git &amp; GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT 1: Customer Revenue & Retention -->
+  <section class="project project--teal" id="customer">
+    <div class="project-inner">
+      <p class="project-eyebrow">Retail analytics · Python, Snowflake, Tableau, local GenAI</p>
+      <h2>Customer Revenue &amp; Retention Analytics</h2>
+      <p class="project-problem">A UK-based online retailer needed to know which customers actually drive revenue, how much cancellations were costing them, and whether first-time buyers were coming back. The project analyzes 1,033,036 cleaned transactions from December 2009 through December 2011 to answer it.</p>
+
+      <div class="kpi-row">
+        <div class="kpi"><div class="kpi-num mono">1.03M</div><div class="kpi-label">Cleaned transactions analyzed</div></div>
+        <div class="kpi"><div class="kpi-num mono" title="£19,604,891.64">£19.6M</div><div class="kpi-label">Gross merchandise sales</div></div>
+        <div class="kpi"><div class="kpi-num mono">72.35%</div><div class="kpi-label">Of known customers are repeat buyers</div></div>
+        <div class="kpi"><div class="kpi-num mono">96.74%</div><div class="kpi-label">Of gross sales came from repeat customers</div></div>
+      </div>
+
+      <div class="shot-grid">
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics/raw/main/screenshots/tableau_revenue_overview.png" alt="Tableau Revenue Overview dashboard showing gross sales, net revenue, invoice count, and monthly revenue trend" loading="lazy"></div>
+          <figcaption>Revenue Overview — Tableau, connected to the Snowflake ANALYTICS layer</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics/raw/main/screenshots/tableau_retention_overview.png" alt="Tableau Retention Overview dashboard showing cohort retention heatmap and segment revenue contribution" loading="lazy"></div>
+          <figcaption>Retention Overview — cohort heatmap and segment contribution</figcaption>
+        </figure>
+      </div>
+
+      <div class="demonstrates">
+        <h3>What this shows</h3>
+        <ul>
+          <li>Built a 3-layer Snowflake warehouse — RAW, STAGING, ANALYTICS — and reconciled row counts and revenue totals across every layer before building a single dashboard.</li>
+          <li>Ran RFM segmentation on 5,852 customers; the "Champions" segment is 24.74% of customers but generates 74.04% of net revenue.</li>
+          <li>Built monthly cohort retention curves — retention drops sharply after month 1, then stabilizes near 20-23% through month 12.</li>
+          <li>Classified 4,725 products into 12 categories using a locally-hosted LLM (Qwen3:4B via Ollama), so no transaction data left the machine and no paid API was needed.</li>
+        </ul>
+      </div>
+
+      <div class="project-footer">
+        <div class="tool-tags">
+          <span class="chip">Python</span><span class="chip">Snowflake SQL</span><span class="chip">Tableau</span><span class="chip">Ollama / Qwen3:4B</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics" target="_blank" rel="noopener">View repository</a> · also see the
+          <a href="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics/blob/main/documentation/Methodology.md" target="_blank" rel="noopener">methodology</a> and
+          <a href="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics/blob/main/documentation/Data_Dictionary.md" target="_blank" rel="noopener">data dictionary</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT 2: Loan Default Risk -->
+  <section class="project project--amber" id="loan">
+    <div class="project-inner">
+      <p class="project-eyebrow">Credit risk analytics · Power BI, Power Query, DAX</p>
+      <h2>Loan Default Risk Analysis</h2>
+      <p class="project-problem">A lender needed more than a single blended default rate — they needed to know which borrower segments actually carry the risk, and how much loan value that risk represents. This dashboard breaks down 255,347 loans by credit score, income, employment, interest rate, and dependent status.</p>
+
+      <div class="kpi-row">
+        <div class="kpi"><div class="kpi-num mono">255,347</div><div class="kpi-label">Loans in the portfolio</div></div>
+        <div class="kpi"><div class="kpi-num mono">11.61%</div><div class="kpi-label">Overall default rate</div></div>
+        <div class="kpi"><div class="kpi-num mono">19.71%</div><div class="kpi-label">Default rate, Young Adult borrowers — the highest segment</div></div>
+        <div class="kpi"><div class="kpi-num mono">13.15%</div><div class="kpi-label">Share of loan value in default, vs. 11.61% by loan count</div></div>
+      </div>
+
+      <div class="shot-grid">
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Loan-Default-Risk-Analysis/raw/main/screenshots/01_executive_overview.png" alt="Executive Overview page showing portfolio size, default performance, and annual default-rate trend" loading="lazy"></div>
+          <figcaption>Executive Overview — portfolio size and default trend</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Loan-Default-Risk-Analysis/raw/main/screenshots/02_default_risk_drivers.png" alt="Default Risk Drivers page analyzing default rate by credit score, income, and interest rate segments" loading="lazy"></div>
+          <figcaption>Default Risk Drivers — with a field-parameter toggle</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Loan-Default-Risk-Analysis/raw/main/screenshots/03_financial_exposure.png" alt="Financial Exposure page comparing total loan exposure with defaulted amount share by loan purpose" loading="lazy"></div>
+          <figcaption>Financial Exposure — exposure by loan purpose, with a decomposition tree</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Loan-Default-Risk-Analysis/raw/main/screenshots/04_portfolio_trends.png" alt="Portfolio Trends page tracking monthly loan amount, monthly default rate, and year-over-year change" loading="lazy"></div>
+          <figcaption>Portfolio Trends — monthly and year-over-year movement</figcaption>
+        </figure>
+      </div>
+
+      <div class="demonstrates">
+        <h3>What this shows</h3>
+        <ul>
+          <li>Modeled a dedicated date table, a centralized measures table, and time-intelligence DAX (YTD, YoY) rather than relying on flat aggregates.</li>
+          <li>Built a field-parameter so one visual pivots between co-signer, mortgage, and dependent status without duplicating pages.</li>
+          <li>Used a decomposition tree so a viewer can investigate defaulted exposure by any borrower characteristic themselves.</li>
+          <li>Separated default rate (by loan count) from defaulted amount share (by loan value) — the two disagree by 1.5 points, which changes which segments actually matter for exposure.</li>
+        </ul>
+      </div>
+
+      <div class="project-footer">
+        <div class="tool-tags">
+          <span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">DAX</span><span class="chip">Excel</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/beingbrute/Loan-Default-Risk-Analysis" target="_blank" rel="noopener">View repository</a> · also see the
+          <a href="https://github.com/beingbrute/Loan-Default-Risk-Analysis/blob/main/documentation/DAX_Measures.md" target="_blank" rel="noopener">DAX measures</a> and
+          <a href="https://github.com/beingbrute/Loan-Default-Risk-Analysis/blob/main/documentation/Data_Preparation.md" target="_blank" rel="noopener">data preparation notes</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT 3: Inventory Demand & Supply -->
+  <section class="project project--steel" id="inventory">
+    <div class="project-inner">
+      <p class="project-eyebrow">Inventory analytics · SQL Server, MySQL, Power BI</p>
+      <h2>Inventory Demand &amp; Supply Analysis</h2>
+      <p class="project-problem">Before this could be a Power BI story, it was a data-trust problem: could the inventory data even be relied on? The project validates the data first, migrates the reporting pipeline from SQL Server to MySQL, then quantifies exactly where shortages are costing revenue.</p>
+
+      <div class="kpi-row">
+        <div class="kpi"><div class="kpi-num mono">79.97%</div><div class="kpi-label">Demand fulfillment rate</div></div>
+        <div class="kpi"><div class="kpi-num mono" title="$97,370 estimated">$97.37K</div><div class="kpi-label">Revenue at risk from unfulfilled demand</div></div>
+        <div class="kpi"><div class="kpi-num mono">81.82%</div><div class="kpi-label">Of inventory records show some shortage (81 of 99)</div></div>
+        <div class="kpi"><div class="kpi-num mono">2</div><div class="kpi-label">Mismatched product IDs caught, escalated, and corrected pre-report</div></div>
+      </div>
+
+      <div class="shot-grid">
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Inventory-Demand-Supply-Analysis/raw/main/screenshots/01_inventory_overview.png" alt="Inventory Overview page showing total demand, available inventory, unfulfilled demand, and fulfillment rate" loading="lazy"></div>
+          <figcaption>Inventory Overview — demand vs. availability over time</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Inventory-Demand-Supply-Analysis/raw/main/screenshots/02_financial_impact.png" alt="Financial Impact page showing potential demand value, fulfilled demand value, and revenue at risk" loading="lazy"></div>
+          <figcaption>Financial Impact — potential vs. fulfilled demand value</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Inventory-Demand-Supply-Analysis/raw/main/screenshots/03_product_analysis.png" alt="Product Analysis page with a conditional-formatted matrix of demand, inventory, fulfillment rate, and revenue at risk by product" loading="lazy"></div>
+          <figcaption>Product Analysis — conditional-formatted, product-level detail</figcaption>
+        </figure>
+      </div>
+
+      <div class="demonstrates">
+        <h3>What this shows</h3>
+        <ul>
+          <li>Caught a real referential data-quality issue — two product IDs in production data that didn't exist in the product master — and followed a documented detect → investigate → escalate → confirm → correct → validate workflow before touching the report.</li>
+          <li>Migrated the entire reporting pipeline from SQL Server to MySQL, reapplied every data-quality correction, and re-validated that the numbers still matched.</li>
+          <li>Modeled fulfillment rate, revenue at risk, and value fulfillment rate as DAX measures, not simple row counts.</li>
+          <li>Showed that the products with the highest unfulfilled demand aren't always the ones with the highest revenue at risk — shortage quantity and financial exposure need to be prioritized separately.</li>
+        </ul>
+      </div>
+
+      <div class="project-footer">
+        <div class="tool-tags">
+          <span class="chip">SQL Server</span><span class="chip">MySQL</span><span class="chip">Power BI</span><span class="chip">DAX</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/beingbrute/Inventory-Demand-Supply-Analysis" target="_blank" rel="noopener">View repository</a> · also see the
+          <a href="https://github.com/beingbrute/Inventory-Demand-Supply-Analysis/blob/main/documentation/DAX_Measures.md" target="_blank" rel="noopener">DAX measures</a> and
+          <a href="https://github.com/beingbrute/Inventory-Demand-Supply-Analysis/blob/main/documentation/Data_Dictionary.md" target="_blank" rel="noopener">data dictionary</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="wrap" id="compare">
+    <div class="section-head">
+      <h2>Compare the work</h2>
+      <p class="section-sub">The same skill set applied three different ways — one on the Microsoft BI stack, one on cloud warehousing plus Tableau, and one bridging both.</p>
+    </div>
+    <p class="compare-hint">Click a project name to isolate what it actually used.</p>
+
+    <div class="table-scroll">
+      <table class="matrix" id="matrix">
+        <thead>
+          <tr>
+            <th>Skill / technique</th>
+            <th class="center" data-key="c">Revenue &amp; Retention</th>
+            <th class="center" data-key="l">Loan Default Risk</th>
+            <th class="center" data-key="i">Inventory</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-c="1" data-l="0" data-i="0"><td>Python &amp; Pandas</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-c="1" data-l="0" data-i="1"><td>SQL (Snowflake / SQL Server / MySQL)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-c="0" data-l="1" data-i="1"><td>Power BI &amp; DAX</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-c="1" data-l="0" data-i="0"><td>Tableau</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-c="1" data-l="0" data-i="0"><td>Cloud data warehousing (RAW/STAGING/ANALYTICS)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-c="0" data-l="0" data-i="1"><td>Database migration</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-c="1" data-l="0" data-i="0"><td>Local GenAI / LLM classification</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-c="1" data-l="0" data-i="0"><td>RFM &amp; cohort retention analysis</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-c="0" data-l="0" data-i="1"><td>Production data-quality remediation</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-c="0" data-l="1" data-i="0"><td>Excel</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="glance">
+      <div class="glance-head">
+        <h3>At a glance</h3>
+        <span class="source-note" id="source-note"></span>
+      </div>
+      <div class="table-scroll">
+        <table class="glance-table">
+          <thead>
+            <tr><th>Project</th><th>Business question</th><th>Dataset</th><th>Primary tool</th><th>Headline result</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Revenue &amp; Retention</td>
+              <td>Who drives revenue, and who comes back?</td>
+              <td>1,033,036 transactions, 5,852 customers</td>
+              <td>Snowflake + Tableau</td>
+              <td>72.35% of customers are repeat buyers, driving 96.74% of revenue</td>
+            </tr>
+            <tr>
+              <td>Loan Default Risk</td>
+              <td>Which borrower segments actually carry default risk?</td>
+              <td>255,347 loans</td>
+              <td>Power BI + DAX</td>
+              <td>11.61% default rate overall, up to 19.71% in the riskiest segment</td>
+            </tr>
+            <tr>
+              <td>Inventory Demand &amp; Supply</td>
+              <td>Where does unmet demand become a business risk?</td>
+              <td>99 product-level inventory records</td>
+              <td>SQL Server → MySQL + Power BI</td>
+              <td>$97.37K in revenue at risk identified down to the SKU</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="footer-inner">
+    <h2>Get in touch</h2>
+    <p class="footer-sub">Open to Data Analyst and Business Analyst roles. The three repositories above are public — clone them, open the dashboards, or check the SQL directly.</p>
+    <div class="contact-row">
+      <a href="mailto:adityaranjan17302215@gmail.com" class="btn">Email</a>
+      <a href="https://www.linkedin.com/in/aditya-ranjan-a344a7270" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/beingbrute" class="btn" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="copyright">Aditya Ranjan — Data Analyst Portfolio</p>
+  </div>
+</footer>
+
+<a href="#top" class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  Back to top
+</a>
+
+<script>
+  // Hero count-up (single orchestrated moment, respects reduced motion)
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('[data-count]');
+    function format(el, val){
+      var d = parseInt(el.getAttribute('data-decimals') || '0', 10);
+      var prefix = el.getAttribute('data-prefix') || '';
+      var suffix = el.getAttribute('data-suffix') || '';
+      return prefix + val.toFixed(d) + suffix;
+    }
+    els.forEach(function(el){
+      var target = parseFloat(el.getAttribute('data-target'));
+      if (reduce){ el.textContent = format(el, target); return; }
+      var start = null;
+      var duration = 1200;
+      function step(ts){
+        if(!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = format(el, target * eased);
+        if(progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  })();
+
+  // Back to top: appears after scrolling, scrolls up on click
+  (function(){
+    var btn = document.getElementById('toTop');
+    if(!btn) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.addEventListener('scroll', function(){
+      btn.classList.toggle('visible', window.scrollY > 500);
+    }, { passive: true });
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
+  })();
+
+  // Source-checked stamp (kept accurate to when this page was last verified against the repos)
+  (function(){
+    var note = document.getElementById('source-note');
+    if(!note) return;
+    note.textContent = 'Source-checked · September 2026';
+  })();
+
+  // Compare matrix: click a project column to isolate it
+  (function(){
+    var table = document.getElementById('matrix');
+    if(!table) return;
+    var headers = table.querySelectorAll('thead th[data-key]');
+    var activeKey = null;
+    headers.forEach(function(th){
+      th.addEventListener('click', function(){
+        var key = th.getAttribute('data-key');
+        if(activeKey === key){
+          activeKey = null;
+          headers.forEach(function(h){ h.classList.remove('active'); });
+          table.querySelectorAll('tbody tr').forEach(function(tr){ tr.classList.remove('row-dim'); });
+          return;
+        }
+        activeKey = key;
+        headers.forEach(function(h){ h.classList.toggle('active', h === th); });
+        table.querySelectorAll('tbody tr').forEach(function(tr){
+          var used = tr.getAttribute('data-' + key) === '1';
+          tr.classList.toggle('row-dim', !used);
+        });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

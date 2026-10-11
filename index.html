@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Ranjan — Data Analyst | SQL, Python, Power BI, Tableau</title>
-<meta name="description" content="Data analyst portfolio by Aditya Ranjan — SQL, Python, Power BI, Tableau and Snowflake. Case studies in retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply. Based in Noida, open to relocation, available immediately.">
+<title>Aditya Ranjan — Data Analyst | SQL, Python, Power BI, Databricks</title>
+<meta name="description" content="Data analyst portfolio by Aditya Ranjan — SQL, Python, Databricks, Alteryx, Power BI, Tableau and Snowflake. Case studies in payment fraud controls, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply. Based in Noida, open to relocation, available immediately.">
 <meta name="author" content="Aditya Ranjan">
 <meta property="og:title" content="Aditya Ranjan — Data Analyst Portfolio">
-<meta property="og:description" content="Three data problems worked end to end: retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply.">
+<meta property="og:description" content="Four data problems worked end to end: payment fraud controls, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,7 @@
     --amber:#eab04a;
     --teal:#4fb3a9;
     --steel:#89a3d8;
+    --rose:#e58a8a;
     --maxw:960px;
   }
   *{box-sizing:border-box;}
@@ -85,7 +86,8 @@
     display:grid; grid-template-columns:1fr; gap:0;
     border-top:1px solid var(--hairline);
   }
-  @media(min-width:720px){ .proof-strip{grid-template-columns:repeat(3,1fr);} }
+  @media(min-width:720px){ .proof-strip{grid-template-columns:repeat(2,1fr);} }
+  @media(min-width:1000px){ .proof-strip{grid-template-columns:repeat(4,1fr);} }
   .proof{
     padding:26px 0; border-bottom:1px solid var(--hairline);
     display:block;
@@ -124,6 +126,7 @@
   .project--teal{--accent:var(--teal);}
   .project--amber{--accent:var(--amber);}
   .project--steel{--accent:var(--steel);}
+  .project--rose{--accent:var(--rose);}
   .project-inner{max-width:var(--maxw); margin:0 auto; padding:56px 24px;}
   .project-eyebrow{color:var(--accent); font-size:0.88rem; font-weight:500; margin:0 0 10px;}
   .project h2{margin-bottom:14px;}
@@ -240,6 +243,7 @@
     <div class="wordmark">Aditya Ranjan</div>
     <nav class="navlinks">
       <a href="#about">About</a>
+      <a href="#fraud">Fraud controls</a>
       <a href="#customer">Retail revenue</a>
       <a href="#loan">Loan risk</a>
       <a href="#inventory">Inventory</a>
@@ -253,16 +257,20 @@
 
   <section class="hero wrap" id="top">
     <p class="kicker">Data analyst portfolio</p>
-    <h1>Three data problems,<br>worked end to end.</h1>
-    <p class="lede">I'm a data analyst who works across the full pipeline — raw files and SQL at one end, a dashboard someone actually opens at the other. <span class="muted-inline">Python, SQL, Power BI, Tableau, and a locally-run LLM, applied to retail revenue, lending risk, and inventory data.</span></p>
+    <h1>Four data problems,<br>worked end to end.</h1>
+    <p class="lede">I'm a data analyst who works across the full pipeline — raw files and SQL at one end, a dashboard someone actually opens at the other. <span class="muted-inline">SQL, Python, Databricks, Alteryx, Power BI and Tableau, applied to payment fraud controls, retail revenue, lending risk, and inventory data.</span></p>
     <p class="availability"><span class="open-dot"></span>Noida, India · Open to relocation · Available to join immediately</p>
     <div class="cta-row">
-      <a href="#customer" class="btn primary">View the projects</a>
-      <a href="Aditya_Ranjan_Data_Analyst.pdf" class="btn" target="_blank" rel="noopener">Download résumé</a>
+      <a href="#fraud" class="btn primary">View the projects</a>
+      <a href="Aditya_Ranjan_Data_Analyst.pdf" class="btn" target="_blank" rel="noopener">Download resume</a>
       <a href="https://github.com/beingbrute" class="btn" target="_blank" rel="noopener">GitHub profile</a>
     </div>
 
     <div class="proof-strip">
+      <a href="#fraud" class="proof">
+        <div class="proof-num" data-count data-target="70.46" data-decimals="2" data-suffix="%">70.46%</div>
+        <div class="proof-desc">precision from the best fraud control, against a 0.13% baseline fraud rate across 6.36M transactions</div>
+      </a>
       <a href="#customer" class="proof">
         <div class="proof-num" data-count data-target="72.35" data-decimals="2" data-suffix="%">72.35%</div>
         <div class="proof-desc">of known customers are repeat buyers — and they account for 96.74% of identified-customer sales</div>
@@ -284,7 +292,8 @@
         <h2>Curious by nature. Analytical by training.</h2>
         <p>I graduated with a B.Tech in Computer Science in 2023 and I'm building my career in data analytics. I like connecting the technical work — cleaning data, writing queries, building models — to the actual business question it needs to answer.</p>
         <p>I currently hold a contract role at Innodata evaluating AI-generated dashboards, charts and reports for accuracy — which has made me considerably more careful about the details in my own work.</p>
-        <p>I'm looking for a Data Analyst or BI Analyst role where I can contribute with SQL, Python, Excel, and BI reporting that people actually use.</p>
+        <p>I'm HackerRank certified in SQL (Advanced), Python (Basic) and R (Intermediate), with 5-star Gold badges in SQL and Python — <a href="https://www.hackerrank.com/profile/adityaranjann1" target="_blank" rel="noopener" style="color:var(--teal);border-bottom:1px solid transparent">verify on HackerRank</a>.</p>
+        <p>I'm looking for a Data Analyst, BI Analyst, or risk and data-assurance analytics role where I can contribute with SQL, Python, Excel, and reporting that people actually use.</p>
         <a href="https://github.com/beingbrute" class="about-link" target="_blank" rel="noopener">Explore my GitHub</a>
         <div class="open-badge"><span class="open-dot"></span>Open to full-time and contract roles · Immediate joiner</div>
       </div>
@@ -317,7 +326,7 @@
   <section class="wrap" id="skills">
     <div class="section-head">
       <h2>What I work with</h2>
-      <p class="section-sub">Pulled straight from the tools actually used across the three projects below — nothing listed here that isn't demonstrated in a repo.</p>
+      <p class="section-sub">Pulled straight from the tools actually used across the four projects below — nothing listed here that isn't demonstrated in a repo.</p>
     </div>
     <div class="skills-groups">
       <div class="skill-group">
@@ -328,25 +337,31 @@
           <span class="chip">SQL Server (T-SQL)</span>
           <span class="chip">MySQL</span>
           <span class="chip">Snowflake SQL</span>
+          <span class="chip">Databricks SQL &amp; PySpark</span>
           <span class="chip">DAX</span>
         </div>
       </div>
       <div class="skill-group">
-        <h3>BI, visualization &amp; modeling</h3>
+        <h3>BI, visualization &amp; tools</h3>
         <div class="chip-row">
           <span class="chip">Power BI</span>
           <span class="chip">Tableau</span>
           <span class="chip">Power Query</span>
-          <span class="chip">Excel</span>
+          <span class="chip">Excel (PivotTables, XLOOKUP)</span>
+          <span class="chip">Alteryx Designer</span>
           <span class="chip">Jupyter Notebook</span>
+          <span class="chip">Git &amp; GitHub</span>
         </div>
       </div>
       <div class="skill-group">
         <h3>Data engineering</h3>
         <div class="chip-row">
+          <span class="chip">Databricks medallion pipeline (Bronze/Silver/Gold)</span>
           <span class="chip">Snowflake warehousing (RAW/STAGING/ANALYTICS)</span>
           <span class="chip">SQL Server → MySQL migration</span>
           <span class="chip">Data-quality remediation</span>
+          <span class="chip">Cross-tool reconciliation (SQL ↔ Alteryx)</span>
+          <span class="chip">Pseudonymisation (salted hashing)</span>
         </div>
       </div>
       <div class="skill-group">
@@ -354,8 +369,68 @@
         <div class="chip-row">
           <span class="chip">RFM segmentation</span>
           <span class="chip">Cohort retention analysis</span>
+          <span class="chip">Fraud control testing (precision / recall)</span>
+          <span class="chip">Classification models (scikit-learn)</span>
+          <span class="chip">Time-series forecasting</span>
           <span class="chip">Local GenAI classification (Ollama / Qwen3:4B)</span>
-          <span class="chip">Git &amp; GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT 0: Payment Fraud Controls -->
+  <section class="project project--rose" id="fraud">
+    <div class="project-inner">
+      <p class="project-eyebrow">Risk &amp; data assurance · Databricks, SQL, Alteryx, Python, Power BI</p>
+      <h2>Payment Transaction Controls &amp; Fraud Risk Analytics</h2>
+      <p class="project-problem">Can this payment data be trusted, how well do simple rule-based controls catch fraud, and does a model add anything the rules miss? Using the public PaySim synthetic mobile-money dataset (6,362,620 transactions, 8,213 of them fraud), I built the full trail: a reconciled cloud pipeline, data-assurance checks, five tested controls, and a leakage-aware model comparison.</p>
+
+      <div class="kpi-row">
+        <div class="kpi"><div class="kpi-num mono">6.36M</div><div class="kpi-label">Transactions reconciled from source file through Bronze, Silver and Gold with zero difference</div></div>
+        <div class="kpi"><div class="kpi-num mono">70.46%</div><div class="kpi-label">Precision of the best control, against a 0.13% baseline fraud rate</div></div>
+        <div class="kpi"><div class="kpi-num mono">1.57%</div><div class="kpi-label">Fraud share in receiver-balance exceptions — about 12× the baseline</div></div>
+        <div class="kpi"><div class="kpi-num mono">100%</div><div class="kpi-label">Random-forest precision, treated as data leakage rather than a result</div></div>
+      </div>
+
+      <div class="shot-grid">
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/payment-fraud-risk-analytics/raw/main/docs/screenshots/powerbi_control_effectiveness.png" alt="Power BI Control Effectiveness page comparing transactions flagged with frauds caught for controls C1 to C5, plus the C1 threshold trade-off" loading="lazy"></div>
+          <figcaption>Control Effectiveness — flagged vs. caught, precision and recall per control</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/payment-fraud-risk-analytics/raw/main/docs/screenshots/powerbi_data_assurance.png" alt="Power BI Data Assurance page showing exception volume by check and each check's fraud share against the 0.13% baseline" loading="lazy"></div>
+          <figcaption>Data Assurance — exception volume vs. fraud share by check</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/payment-fraud-risk-analytics/raw/main/docs/screenshots/powerbi_model_forecast.png" alt="Power BI Model and Forecast page with a confusion matrix, model versus control comparison, and forecast back-test" loading="lazy"></div>
+          <figcaption>Model &amp; Forecast — rules vs. models, and the hourly fraud-count forecast back-test</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/payment-fraud-risk-analytics/raw/main/docs/screenshots/alteryx_workflow.png" alt="Alteryx Designer workflow rebuilding controls C1 and C2 for reconciliation with the SQL results" loading="lazy"></div>
+          <figcaption>Alteryx — two controls rebuilt independently and matched to SQL exactly</figcaption>
+        </figure>
+      </div>
+
+      <div class="demonstrates">
+        <h3>What this shows</h3>
+        <ul>
+          <li>Built a Databricks Bronze → Silver → Gold pipeline, hashed account IDs with a salted SHA-256 in Silver, and reconciled row count, total amount and fraud count across every layer.</li>
+          <li>Ran six data-assurance checks and logged exceptions instead of deleting rows. Two checks failed on 56.6% of transactions with almost no fraud (a simulator artefact), while receiver-balance mismatches carried a 1.57% fraud share — about 12× the baseline.</li>
+          <li>Tested five rule-based controls for precision and recall: two caught about half of all fraud at 65–70% precision, while one caught 97.55% of fraud at only 0.67% precision. Rebuilt two controls in Alteryx and matched the SQL counts exactly.</li>
+          <li>Trained logistic regression and a random forest on a time-based split and flagged the forest's perfect score as leakage from PaySim's balance logic. Re-testing the controls on the same test window changed the story: the two best rules reached 100% and 98.65% precision against 52.16% for logistic regression, but caught only about half the fraud the models did (97%+). The real trade-off is recall, not precision.</li>
+          <li>Hand-reviewed a stratified sample of 25 flagged transactions in an Excel control-testing workpaper (7 were fraud, all from the two strongest rules), and back-tested an hourly fraud-count forecast: regression beat a seasonal baseline, MAE 4.38 vs 5.92.</li>
+          <li>Wrote a one-page research memo on rules vs. machine learning, drawing on RBI's FAQ on the fraud risk management directions and its FREE-AI report (August 2025).</li>
+        </ul>
+      </div>
+
+      <div class="project-footer">
+        <div class="tool-tags">
+          <span class="chip">Databricks</span><span class="chip">PySpark</span><span class="chip">SQL</span><span class="chip">Alteryx</span><span class="chip">scikit-learn</span><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Excel</span>
+        </div>
+        <div class="project-links">
+          <a href="https://public.tableau.com/app/profile/aditya.ranjan7019/viz/PaymentFraudRiskAnalytics-PaySim/FraudAnalyticsDashboard" target="_blank" rel="noopener">Explore the Tableau dashboard</a> · <a href="https://github.com/beingbrute/payment-fraud-risk-analytics" target="_blank" rel="noopener">View repository</a> · also see the
+          <a href="https://github.com/beingbrute/payment-fraud-risk-analytics/blob/main/docs/research_memo.md" target="_blank" rel="noopener">research memo</a> and
+          <a href="https://github.com/beingbrute/payment-fraud-risk-analytics/blob/main/excel/control_testing_workpaper.xlsx" target="_blank" rel="noopener">control-testing workpaper</a>.
         </div>
       </div>
     </div>
@@ -378,7 +453,7 @@
       <div class="shot-grid">
         <figure>
           <div class="shot-frame"><img src="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics/raw/main/screenshots/tableau_revenue_overview.png" alt="Tableau Revenue Overview dashboard showing gross sales, net revenue, invoice count, and monthly revenue trend" loading="lazy"></div>
-          <figcaption>Revenue Overview — Tableau, connected to the Snowflake ANALYTICS layer</figcaption>
+          <figcaption>Revenue Overview — Tableau, built on the Snowflake ANALYTICS views</figcaption>
         </figure>
         <figure>
           <div class="shot-frame"><img src="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics/raw/main/screenshots/tableau_retention_overview.png" alt="Tableau Retention Overview dashboard showing cohort retention heatmap and segment revenue contribution" loading="lazy"></div>
@@ -390,8 +465,9 @@
         <h3>What this shows</h3>
         <ul>
           <li>Built a 3-layer Snowflake warehouse — RAW, STAGING, ANALYTICS — and reconciled row counts and revenue totals across every layer before building a single dashboard.</li>
+          <li>Combined two overlapping source files (1,067,371 rows), removed 34,335 duplicates, and flagged a suspected £38,970 entry error instead of deleting it.</li>
           <li>Ran RFM segmentation on 5,852 identified customers; the "Champions" segment is 24.74% of them but generates 74.04% of identified-customer net revenue.</li>
-          <li>Built monthly cohort retention curves — retention drops sharply after month 1, then stabilizes near 20-23% through month 12.</li>
+          <li>Built monthly cohort retention curves — retention drops sharply after month 1, then stabilizes near 20–23% through month 12.</li>
           <li>Classified 4,725 products into 12 categories using a locally-hosted LLM (Qwen3:4B via Ollama), so no transaction data left the machine and no paid API was needed.</li>
         </ul>
       </div>
@@ -414,7 +490,7 @@
     <div class="project-inner">
       <p class="project-eyebrow">Credit risk analytics · Power BI, Power Query, DAX</p>
       <h2>Loan Default Risk Analysis</h2>
-      <p class="project-problem">A single blended default rate hides where the risk is. Using a public loan-default dataset, this dashboard asks which borrower segments carry the most risk and how much loan value that risk represents, breaking down 255,347 loans by credit score, income, employment, interest rate, and dependent status.</p>
+      <p class="project-problem">A single blended default rate hides where the risk is. Using a public Kaggle loan-default dataset (via a Udemy course, with an added loan-date column), this dashboard asks which borrower segments carry the most risk and how much loan value that risk represents, breaking down 255,347 loans by credit score, income, employment, interest rate, and dependent status.</p>
 
       <div class="kpi-row">
         <div class="kpi"><div class="kpi-num mono">255,347</div><div class="kpi-label">Loans in the portfolio</div></div>
@@ -438,7 +514,7 @@
         </figure>
         <figure>
           <div class="shot-frame"><img src="https://github.com/beingbrute/Loan-Default-Risk-Analysis/raw/main/screenshots/04_portfolio_trends.png" alt="Portfolio Trends page tracking monthly loan amount, monthly default rate, and year-over-year change" loading="lazy"></div>
-          <figcaption>Portfolio Trends — monthly and year-over-year movement</figcaption>
+          <figcaption>Portfolio Trends — YTD and YoY time-intelligence measures (the source dates are synthetic, so this shows the measures, not real lending trends)</figcaption>
         </figure>
       </div>
 
@@ -448,13 +524,14 @@
           <li>Modeled a dedicated date table, a centralized measures table, and time-intelligence DAX (YTD, YoY) rather than relying on flat aggregates.</li>
           <li>Built a field-parameter so one visual pivots between co-signer, mortgage, and dependent status without duplicating pages.</li>
           <li>Used a decomposition tree so a viewer can investigate defaulted exposure by any borrower characteristic themselves.</li>
-          <li>Separated default rate (by loan count) from defaulted amount share (by loan value) — the two disagree by 1.5 points, which changes which segments actually matter for exposure.</li>
+          <li>Separated default rate (by loan count) from defaulted amount share (by loan value): 11.61% vs 13.15%, so counting loans alone understates the value at risk.</li>
+          <li>Caught a wrong denominator in my own first version (each group's defaults divided by all loans), rebuilt it as one reusable default-rate measure, and checked every KPI against the source data.</li>
         </ul>
       </div>
 
       <div class="project-footer">
         <div class="tool-tags">
-          <span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">DAX</span><span class="chip">Excel</span>
+          <span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">DAX</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/beingbrute/Loan-Default-Risk-Analysis" target="_blank" rel="noopener">View repository</a> · also see the
@@ -521,7 +598,7 @@
   <section class="wrap" id="compare">
     <div class="section-head">
       <h2>Compare the work</h2>
-      <p class="section-sub">The same skill set applied three different ways — one on the Microsoft BI stack, one on cloud warehousing plus Tableau, and one bridging both.</p>
+      <p class="section-sub">The same skill set applied four different ways — a cloud risk-and-controls pipeline, cloud warehousing plus Tableau, the Microsoft BI stack, and a migration bridging both.</p>
     </div>
     <p class="compare-hint">Click a project name to isolate what it actually used.</p>
 
@@ -530,22 +607,28 @@
         <thead>
           <tr>
             <th>Skill / technique</th>
+            <th class="center" data-key="f">Fraud Controls</th>
             <th class="center" data-key="c">Revenue &amp; Retention</th>
             <th class="center" data-key="l">Loan Default Risk</th>
             <th class="center" data-key="i">Inventory</th>
           </tr>
         </thead>
         <tbody>
-          <tr data-c="1" data-l="0" data-i="0"><td>Python &amp; Pandas</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-c="1" data-l="0" data-i="1"><td>SQL (Snowflake / SQL Server / MySQL)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
-          <tr data-c="0" data-l="1" data-i="1"><td>Power BI &amp; DAX</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td></tr>
-          <tr data-c="1" data-l="0" data-i="0"><td>Tableau</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-c="1" data-l="0" data-i="0"><td>Cloud data warehousing (RAW/STAGING/ANALYTICS)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-c="0" data-l="0" data-i="1"><td>Database migration</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
-          <tr data-c="1" data-l="0" data-i="0"><td>Local GenAI / LLM classification</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-c="1" data-l="0" data-i="0"><td>RFM &amp; cohort retention analysis</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-c="0" data-l="0" data-i="1"><td>Production data-quality remediation</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
-          <tr data-c="0" data-l="1" data-i="0"><td>Excel</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-c="1" data-l="0" data-i="0"><td>Python &amp; Pandas</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-c="1" data-l="0" data-i="1"><td>SQL (Databricks / Snowflake / SQL Server / MySQL)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-f="1" data-c="0" data-l="1" data-i="1"><td>Power BI &amp; DAX</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-f="1" data-c="1" data-l="0" data-i="0"><td>Tableau</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-c="1" data-l="0" data-i="0"><td>Cloud data warehousing (layered / medallion)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-c="0" data-l="0" data-i="1"><td>Database migration</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-f="0" data-c="1" data-l="0" data-i="0"><td>Local GenAI / LLM classification</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-c="1" data-l="0" data-i="0"><td>RFM &amp; cohort retention analysis</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-c="0" data-l="0" data-i="1"><td>Production data-quality remediation</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Excel workpaper</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Databricks &amp; PySpark</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Alteryx</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Control testing &amp; data assurance</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Machine learning (scikit-learn)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Time-series forecasting</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -561,6 +644,13 @@
             <tr><th>Project</th><th>Business question</th><th>Dataset</th><th>Primary tool</th><th>Headline result</th></tr>
           </thead>
           <tbody>
+            <tr>
+              <td>Payment Fraud Controls</td>
+              <td>Can the data be trusted, and do the fraud controls work?</td>
+              <td>PaySim (public, synthetic) · 6,362,620 transactions, 8,213 frauds</td>
+              <td>Databricks + SQL + Alteryx</td>
+              <td>Best control reached 70.46% precision against a 0.13% baseline; a perfect-scoring model was flagged as leakage, not reported as a win</td>
+            </tr>
             <tr>
               <td>Revenue &amp; Retention</td>
               <td>Who drives revenue, and who comes back?</td>
@@ -593,15 +683,15 @@
 <footer id="contact">
   <div class="footer-inner">
     <h2>Get in touch</h2>
-    <p class="footer-sub">Open to Data Analyst, BI Analyst, Power BI Developer, and Reporting/MIS Analyst roles. Based in Noida, open to relocation, available to join immediately. The three repositories above are public — clone them, open the dashboards, or check the SQL directly.</p>
+    <p class="footer-sub">Open to Data Analyst, BI Analyst, Power BI Developer, Data Quality, and risk &amp; data-assurance analytics roles. Based in Noida, open to relocation, available to join immediately. The four repositories above are public — clone them, open the dashboards, or check the SQL directly.</p>
     <div class="contact-row">
       <a href="mailto:adityaranjan17302215@gmail.com" class="btn primary">adityaranjan17302215@gmail.com</a>
       <a href="tel:+918299744947" class="btn">+91 82997 44947</a>
       <a href="https://www.linkedin.com/in/aditya-ranjan-data" class="btn" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/beingbrute" class="btn" target="_blank" rel="noopener">GitHub</a>
-      <a href="Aditya_Ranjan_Data_Analyst.pdf" class="btn" target="_blank" rel="noopener">Résumé (PDF)</a>
+      <a href="Aditya_Ranjan_Data_Analyst.pdf" class="btn" target="_blank" rel="noopener">Resume (PDF)</a>
     </div>
-    <p class="copyright">Aditya Ranjan — Data Analyst · SQL, Python, Power BI &amp; Tableau · Noida, India</p>
+    <p class="copyright">Aditya Ranjan — Data Analyst · SQL, Python, Power BI, Tableau &amp; Databricks · Noida, India</p>
   </div>
 </footer>
 
@@ -655,7 +745,7 @@
   (function(){
     var note = document.getElementById('source-note');
     if(!note) return;
-    note.textContent = 'Source-checked · September 2026';
+    note.textContent = 'Source-checked · October 2026';
   })();
 
   // Compare matrix: click a project column to isolate it

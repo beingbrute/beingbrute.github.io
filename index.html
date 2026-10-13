@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Ranjan — Data Analyst | SQL, Python, Power BI, Databricks</title>
-<meta name="description" content="Data analyst portfolio by Aditya Ranjan — SQL, Python, Databricks, Alteryx, Power BI, Tableau and Snowflake. Case studies in payment fraud controls, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply. Based in Noida, open to relocation, available immediately.">
+<title>Aditya Ranjan — Data Analyst | SQL, Excel, Power BI, Python, Databricks</title>
+<meta name="description" content="Data analyst portfolio by Aditya Ranjan — SQL, Excel, Python, Databricks, Alteryx, Power BI, Tableau and Snowflake. Case studies in payment fraud controls, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply. Based in Noida, open to relocation, available immediately.">
 <meta name="author" content="Aditya Ranjan">
 <meta property="og:title" content="Aditya Ranjan — Data Analyst Portfolio">
 <meta property="og:description" content="Four data problems worked end to end: payment fraud controls, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply.">
@@ -151,6 +151,8 @@
 
   .demonstrates{margin-bottom:32px;}
   .demonstrates h3{font-size:1rem; font-weight:600; margin:0 0 14px; color:var(--text);}
+  .recommend{margin:18px 0 0; padding:12px 16px; border-left:3px solid var(--amber); background:var(--panel); color:var(--text); border-radius:0 6px 6px 0;}
+  .recommend strong{color:var(--amber); font-weight:600;}
   .demonstrates ul{margin:0; padding:0; list-style:none;}
   .demonstrates li{
     padding:10px 0 10px 20px; border-top:1px solid var(--hairline); position:relative; font-size:0.98rem;
@@ -258,7 +260,7 @@
   <section class="hero wrap" id="top">
     <p class="kicker">Data analyst portfolio</p>
     <h1>Four data problems,<br>worked end to end.</h1>
-    <p class="lede">I'm a data analyst who works across the full pipeline — raw files and SQL at one end, a dashboard someone actually opens at the other. <span class="muted-inline">SQL, Python, Databricks, Alteryx, Power BI and Tableau, applied to payment fraud controls, retail revenue, lending risk, and inventory data.</span></p>
+    <p class="lede">I'm a data analyst who works across the full pipeline — raw files and SQL at one end, a dashboard someone actually opens at the other. <span class="muted-inline">SQL, Excel, Python, Databricks, Alteryx, Power BI and Tableau, applied to payment fraud controls, retail revenue, lending risk, and inventory data.</span></p>
     <p class="availability"><span class="open-dot"></span>Noida, India · Open to relocation · Available to join immediately</p>
     <div class="cta-row">
       <a href="#fraud" class="btn primary">View the projects</a>
@@ -361,7 +363,7 @@
           <span class="chip">SQL Server → MySQL migration</span>
           <span class="chip">Data-quality remediation</span>
           <span class="chip">Cross-tool reconciliation (SQL ↔ Alteryx)</span>
-          <span class="chip">Pseudonymisation (salted hashing)</span>
+          <span class="chip">Pseudonymization (salted hashing)</span>
         </div>
       </div>
       <div class="skill-group">
@@ -415,12 +417,13 @@
         <h3>What this shows</h3>
         <ul>
           <li>Built a Databricks Bronze → Silver → Gold pipeline, hashed account IDs with a salted SHA-256 in Silver, and reconciled row count, total amount and fraud count across every layer.</li>
-          <li>Ran six data-assurance checks and logged exceptions instead of deleting rows. Two checks failed on 56.6% of transactions with almost no fraud (a simulator artefact), while receiver-balance mismatches carried a 1.57% fraud share — about 12× the baseline.</li>
+          <li>Ran six data-assurance checks and logged exceptions instead of deleting rows. Two checks failed on 56.6% of transactions with almost no fraud (a simulator artifact), while receiver-balance mismatches carried a 1.57% fraud share — about 12× the baseline.</li>
           <li>Tested five rule-based controls for precision and recall: two caught about half of all fraud at 65–70% precision, while one caught 97.55% of fraud at only 0.67% precision. Rebuilt two controls in Alteryx and matched the SQL counts exactly.</li>
           <li>Trained logistic regression and a random forest on a time-based split and flagged the forest's perfect score as leakage from PaySim's balance logic. Re-testing the controls on the same test window changed the story: the two best rules reached 100% and 98.65% precision against 52.16% for logistic regression, but caught only about half the fraud the models did (97%+). The real trade-off is recall, not precision.</li>
           <li>Hand-reviewed a stratified sample of 25 flagged transactions in an Excel control-testing workpaper (7 were fraud, all from the two strongest rules), and back-tested an hourly fraud-count forecast: regression beat a seasonal baseline, MAE 4.38 vs 5.92.</li>
           <li>Wrote a one-page research memo on rules vs. machine learning, drawing on RBI's FAQ on the fraud risk management directions and its FREE-AI report (August 2025).</li>
         </ul>
+        <p class="recommend"><strong>What I'd recommend:</strong> Keep the two strongest rules as primary controls, retire or redesign the rule that flagged 2.49M transactions for 45 frauds, and use logistic regression to prioritize alerts instead of the leaky random forest.</p>
       </div>
 
       <div class="project-footer">
@@ -470,6 +473,7 @@
           <li>Built monthly cohort retention curves — retention drops sharply after month 1, then stabilizes near 20–23% through month 12.</li>
           <li>Classified 4,725 products into 12 categories using a locally-hosted LLM (Qwen3:4B via Ollama), so no transaction data left the machine and no paid API was needed.</li>
         </ul>
+        <p class="recommend"><strong>What I'd recommend:</strong> Weight retention effort toward Champions, test a follow-up within 30 days of the first order, and start capturing cancellation reason codes.</p>
       </div>
 
       <div class="project-footer">
@@ -527,6 +531,7 @@
           <li>Separated default rate (by loan count) from defaulted amount share (by loan value): 11.61% vs 13.15%, so counting loans alone understates the value at risk.</li>
           <li>Caught a wrong denominator in my own first version (each group's defaults divided by all loans), rebuilt it as one reusable default-rate measure, and checked every KPI against the source data.</li>
         </ul>
+        <p class="recommend"><strong>What I'd recommend:</strong> Size exposure by loan value, not only by count, and test tighter approval criteria or risk-based pricing for the highest-risk segments.</p>
       </div>
 
       <div class="project-footer">
@@ -547,7 +552,7 @@
     <div class="project-inner">
       <p class="project-eyebrow">Inventory analytics · SQL Server, MySQL, Power BI</p>
       <h2>Inventory Demand &amp; Supply Analysis</h2>
-      <p class="project-problem">Before this could be a Power BI story, it was a data-trust problem: could the inventory data even be relied on? The project validates the data first, migrates the reporting pipeline from SQL Server to MySQL, then quantifies exactly where shortages are costing revenue.</p>
+      <p class="project-problem">Before this could be a Power BI story, it was a data-trust problem: could the inventory data even be relied on? The project validates the data first, simulates a reporting migration from SQL Server to MySQL, then quantifies exactly where shortages are costing revenue.</p>
 
       <div class="kpi-row">
         <div class="kpi"><div class="kpi-num mono">79.97%</div><div class="kpi-label">Demand fulfillment rate</div></div>
@@ -574,11 +579,12 @@
       <div class="demonstrates">
         <h3>What this shows</h3>
         <ul>
-          <li>Caught a real referential data-quality issue — two product IDs in production data that didn't exist in the product master — and followed a documented detect → investigate → escalate → confirm → correct → validate workflow before touching the report.</li>
-          <li>Migrated the entire reporting pipeline from SQL Server to MySQL, reapplied every data-quality correction, and re-validated that the numbers still matched.</li>
+          <li>In a simulated production environment, caught a referential data-quality issue — two product IDs that didn't exist in the product master — and followed a documented detect → investigate → escalate → confirm → correct → validate workflow before touching the report.</li>
+          <li>Simulated a migration of the reporting pipeline from SQL Server to MySQL, reapplied every data-quality correction, and re-validated that the numbers still matched.</li>
           <li>Modeled fulfillment rate, revenue at risk, and value fulfillment rate as DAX measures, not simple row counts.</li>
           <li>Showed that the products with the highest unfulfilled demand aren't always the ones with the highest revenue at risk — shortage quantity and financial exposure need to be prioritized separately.</li>
         </ul>
+        <p class="recommend"><strong>What I'd recommend:</strong> Set reorder points for the top 10 products by revenue at risk, and track demand and value fulfillment together as paired KPIs.</p>
       </div>
 
       <div class="project-footer">
@@ -622,7 +628,7 @@
           <tr data-f="0" data-c="0" data-l="0" data-i="1"><td>Database migration</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
           <tr data-f="0" data-c="1" data-l="0" data-i="0"><td>Local GenAI / LLM classification</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
           <tr data-f="0" data-c="1" data-l="0" data-i="0"><td>RFM &amp; cohort retention analysis</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-c="0" data-l="0" data-i="1"><td>Production data-quality remediation</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-f="0" data-c="0" data-l="0" data-i="1"><td>Data-quality remediation (simulated production)</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
           <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Excel workpaper</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
           <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Databricks &amp; PySpark</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
           <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Alteryx</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
@@ -691,7 +697,7 @@
       <a href="https://github.com/beingbrute" class="btn" target="_blank" rel="noopener">GitHub</a>
       <a href="Aditya_Ranjan_Data_Analyst.pdf" class="btn" target="_blank" rel="noopener">Resume (PDF)</a>
     </div>
-    <p class="copyright">Aditya Ranjan — Data Analyst · SQL, Python, Power BI, Tableau &amp; Databricks · Noida, India</p>
+    <p class="copyright">Aditya Ranjan — Data Analyst · SQL, Excel, Power BI, Python, Tableau &amp; Databricks · Noida, India</p>
   </div>
 </footer>
 

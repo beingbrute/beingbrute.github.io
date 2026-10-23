@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Ranjan — Data Analyst | SQL, Excel, Power BI, Python, Databricks</title>
+<title>Aditya Ranjan — Data Analyst | SQL, Excel, Power BI, Tableau, Python, Databricks</title>
 <meta name="description" content="Data analyst portfolio by Aditya Ranjan — SQL, Excel, Python, Databricks, Alteryx, Power BI, Tableau and Snowflake. Case studies in payment fraud controls, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply. Based in Noida, open to relocation, available immediately.">
 <meta name="author" content="Aditya Ranjan">
 <meta property="og:title" content="Aditya Ranjan — Data Analyst Portfolio">
@@ -264,7 +264,7 @@
     <p class="availability"><span class="open-dot"></span>Noida, India · Open to relocation · Available to join immediately</p>
     <div class="cta-row">
       <a href="#fraud" class="btn primary">View the projects</a>
-      <a href="Aditya_Ranjan_Data_Analyst.pdf?v=2026-10-16" class="btn" target="_blank" rel="noopener">Download resume</a>
+      <a href="Aditya_Ranjan_Data_Analyst.pdf?v=2026-10-23" class="btn" target="_blank" rel="noopener">Download resume</a>
       <a href="https://github.com/beingbrute" class="btn" target="_blank" rel="noopener">GitHub profile</a>
     </div>
 
@@ -295,7 +295,7 @@
         <p>I graduated with a B.Tech in Computer Science in 2023 and I'm building my career in data analytics. I like connecting the technical work — cleaning data, writing queries, building models — to the actual business question it needs to answer.</p>
         <p>I currently hold a contract role at Innodata evaluating AI-generated dashboards, charts and reports for accuracy — which has made me considerably more careful about the details in my own work.</p>
         <p>I'm HackerRank certified in SQL (Advanced), Python (Basic) and R (Intermediate), with 5-star Gold badges in SQL and Python — <a href="https://www.hackerrank.com/profile/adityaranjann1" target="_blank" rel="noopener" style="color:var(--teal);border-bottom:1px solid transparent">verify on HackerRank</a>.</p>
-        <p>I'm looking for a Data Analyst, BI Analyst, or risk and data-assurance analytics role where I can contribute with SQL, Python, Excel, and reporting that people actually use.</p>
+        <p>I'm looking for a Data Analyst, BI Analyst, Tableau or Power BI Developer, or risk and data-assurance analytics role where I can contribute with SQL, Python, Excel, Tableau, Power BI and reporting that people actually use.</p>
         <a href="https://github.com/beingbrute" class="about-link" target="_blank" rel="noopener">Explore my GitHub</a>
         <div class="open-badge"><span class="open-dot"></span>Open to full-time and contract roles · Immediate joiner</div>
       </div>
@@ -347,7 +347,8 @@
         <h3>BI, visualization &amp; tools</h3>
         <div class="chip-row">
           <span class="chip">Power BI</span>
-          <span class="chip">Tableau</span>
+          <span class="chip">Tableau (LOD expressions, data blending)</span>
+          <span class="chip">Tableau Cloud (publishing &amp; permissions)</span>
           <span class="chip">Power Query</span>
           <span class="chip">Excel (PivotTables, XLOOKUP)</span>
           <span class="chip">Alteryx Designer</span>
@@ -362,7 +363,7 @@
           <span class="chip">Snowflake warehousing (RAW/STAGING/ANALYTICS)</span>
           <span class="chip">SQL Server → MySQL migration</span>
           <span class="chip">Data-quality remediation</span>
-          <span class="chip">Cross-tool reconciliation (SQL ↔ Alteryx)</span>
+          <span class="chip">Cross-tool reconciliation (SQL ↔ Alteryx, Tableau ↔ Snowflake)</span>
           <span class="chip">Pseudonymization (salted hashing)</span>
         </div>
       </div>
@@ -442,7 +443,7 @@
   <!-- PROJECT 1: Customer Revenue & Retention -->
   <section class="project project--teal" id="customer">
     <div class="project-inner">
-      <p class="project-eyebrow">Retail analytics · Python, Snowflake, Tableau, local GenAI</p>
+      <p class="project-eyebrow">Retail analytics · Python, Snowflake, Tableau (LOD, data blending, Cloud), local GenAI</p>
       <h2>Customer Revenue &amp; Retention Analytics</h2>
       <p class="project-problem">Using the public UCI Online Retail II dataset from a UK-based online retailer, I asked which customers actually drive revenue, how much cancellations cost, and whether first-time buyers come back. The project analyzes 1,033,036 cleaned transactions from December 2009 through December 2011 to answer it.</p>
 
@@ -462,6 +463,10 @@
           <div class="shot-frame"><img src="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics/raw/main/screenshots/tableau_retention_overview.png" alt="Tableau Retention Overview dashboard showing cohort retention heatmap and segment revenue contribution" loading="lazy"></div>
           <figcaption>Retention Overview — cohort heatmap and segment contribution</figcaption>
         </figure>
+        <figure style="grid-column:1/-1; max-width:520px; width:100%; justify-self:center;">
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics/raw/main/screenshots/tableau_lod_analysis.png" alt="Tableau dashboard of customer segments using FIXED, INCLUDE and EXCLUDE LOD expressions and a data blend that reconciles segment revenue shares with the Snowflake mart" loading="lazy"></div>
+          <figcaption>Customer Segments — FIXED, INCLUDE &amp; EXCLUDE LOD + a data blend reconciled against Snowflake</figcaption>
+        </figure>
       </div>
 
       <div class="demonstrates">
@@ -470,6 +475,9 @@
           <li>Built a 3-layer Snowflake warehouse — RAW, STAGING, ANALYTICS — and reconciled row counts and revenue totals across every layer before building a single dashboard.</li>
           <li>Combined two overlapping source files (1,067,371 rows), removed 34,335 duplicates, and flagged a suspected £38,970 entry error instead of deleting it.</li>
           <li>Ran RFM segmentation on 5,852 identified customers; the "Champions" segment is 24.74% of them but generates 74.04% of identified-customer net revenue.</li>
+          <li>Added a segment dashboard using all three LOD types: FIXED for revenue share and a country benchmark, INCLUDE for revenue per country, and EXCLUDE for UK share. High-Value Active is the only segment that earns most of its revenue outside the UK (54.30%).</li>
+          <li>Blended the Python RFM table with the Snowflake segment mart in Tableau to reconcile revenue shares; every segment matched within 0.05 percentage points, the rounding in the export.</li>
+          <li>Published the workbook to a Tableau Cloud developer site with Analyst and Viewer groups and locked project permissions, denied data downloads for viewers, and tested it by signing in as the viewer.</li>
           <li>Built monthly cohort retention curves — retention drops sharply after month 1, then stabilizes near 20–23% through month 12.</li>
           <li>Classified 4,725 products into 12 categories using a locally-hosted LLM (Qwen3:4B via Ollama), so no transaction data left the machine and no paid API was needed.</li>
         </ul>
@@ -478,10 +486,10 @@
 
       <div class="project-footer">
         <div class="tool-tags">
-          <span class="chip">Python</span><span class="chip">Snowflake SQL</span><span class="chip">Tableau</span><span class="chip">Ollama / Qwen3:4B</span>
+          <span class="chip">Python</span><span class="chip">Snowflake SQL</span><span class="chip">Tableau</span><span class="chip">LOD expressions</span><span class="chip">Data blending</span><span class="chip">Tableau Cloud</span><span class="chip">Ollama / Qwen3:4B</span>
         </div>
         <div class="project-links">
-          <a href="https://public.tableau.com/app/profile/aditya.ranjan7019/viz/Customer_Revenue_Retention_Analytics_Snowflake/RevenueOverview" target="_blank" rel="noopener">Explore the live dashboards</a> · <a href="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics" target="_blank" rel="noopener">View repository</a> · also see the
+          <a href="https://public.tableau.com/app/profile/aditya.ranjan7019/viz/Customer_Revenue_Retention_Analytics_Snowflake/RevenueOverview" target="_blank" rel="noopener">Explore the live dashboards</a> · <a href="https://public.tableau.com/app/profile/aditya.ranjan7019/viz/Customer_Revenue_Retention_Analytics_Snowflake_17926845101980/LODAnalysis" target="_blank" rel="noopener">LOD &amp; blend dashboard</a> · <a href="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics" target="_blank" rel="noopener">View repository</a> · also see the
           <a href="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics/blob/main/documentation/Methodology.md" target="_blank" rel="noopener">methodology</a> and
           <a href="https://github.com/beingbrute/Customer-Revenue-Retention-Analytics/blob/main/documentation/Data_Dictionary.md" target="_blank" rel="noopener">data dictionary</a>.
         </div>
@@ -624,6 +632,8 @@
           <tr data-f="1" data-c="1" data-l="0" data-i="1"><td>SQL (Databricks / Snowflake / SQL Server / MySQL)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
           <tr data-f="1" data-c="0" data-l="1" data-i="1"><td>Power BI &amp; DAX</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td></tr>
           <tr data-f="1" data-c="1" data-l="0" data-i="0"><td>Tableau</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-c="1" data-l="0" data-i="0"><td>Tableau LOD expressions &amp; data blending</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-c="1" data-l="0" data-i="0"><td>Tableau Cloud publishing &amp; permissions</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
           <tr data-f="1" data-c="1" data-l="0" data-i="0"><td>Cloud data warehousing (layered / medallion)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
           <tr data-f="0" data-c="0" data-l="0" data-i="1"><td>Database migration</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
           <tr data-f="0" data-c="1" data-l="0" data-i="0"><td>Local GenAI / LLM classification</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
@@ -689,13 +699,13 @@
 <footer id="contact">
   <div class="footer-inner">
     <h2>Get in touch</h2>
-    <p class="footer-sub">Open to Data Analyst, BI Analyst, Power BI Developer, Data Quality, and risk &amp; data-assurance analytics roles. Based in Noida, open to relocation, available to join immediately. The four repositories above are public — clone them, open the dashboards, or check the SQL directly.</p>
+    <p class="footer-sub">Open to Data Analyst, BI Analyst, Power BI Developer, Tableau Developer, Data Quality, and risk &amp; data-assurance analytics roles. Based in Noida, open to relocation, available to join immediately. The four repositories above are public — clone them, open the dashboards, or check the SQL directly.</p>
     <div class="contact-row">
       <a href="mailto:adityaranjan17302215@gmail.com" class="btn primary">adityaranjan17302215@gmail.com</a>
       <a href="tel:+918299744947" class="btn">+91 82997 44947</a>
       <a href="https://www.linkedin.com/in/aditya-ranjan-data" class="btn" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/beingbrute" class="btn" target="_blank" rel="noopener">GitHub</a>
-      <a href="Aditya_Ranjan_Data_Analyst.pdf?v=2026-10-16" class="btn" target="_blank" rel="noopener">Resume (PDF)</a>
+      <a href="Aditya_Ranjan_Data_Analyst.pdf?v=2026-10-23" class="btn" target="_blank" rel="noopener">Resume (PDF)</a>
     </div>
     <p class="copyright">Aditya Ranjan — Data Analyst · SQL, Excel, Power BI, Python, Tableau &amp; Databricks · Noida, India</p>
   </div>

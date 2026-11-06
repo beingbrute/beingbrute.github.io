@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aditya Ranjan — Data Analyst | SQL, Excel, Power BI, Tableau, Python, Databricks</title>
-<meta name="description" content="Data analyst portfolio by Aditya Ranjan — SQL, Excel, Python, Databricks, Alteryx, Power BI, Tableau and Snowflake. Case studies in payment fraud controls, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply. Based in Noida, open to relocation, available immediately.">
+<meta name="description" content="Data analyst portfolio by Aditya Ranjan — SQL, Excel, Python, Databricks, Alteryx, Power BI, Tableau and Snowflake. Case studies in payment fraud controls, FDA drug shortages, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply. Based in Noida, open to relocation, available immediately.">
 <meta name="author" content="Aditya Ranjan">
 <meta property="og:title" content="Aditya Ranjan — Data Analyst Portfolio">
-<meta property="og:description" content="Four data problems worked end to end: payment fraud controls, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply.">
+<meta property="og:description" content="Five data problems worked end to end: payment fraud controls, FDA drug shortages, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +24,7 @@
     --teal:#4fb3a9;
     --steel:#89a3d8;
     --rose:#e58a8a;
+    --sage:#9cc48a;
     --maxw:960px;
   }
   *{box-sizing:border-box;}
@@ -127,6 +128,7 @@
   .project--amber{--accent:var(--amber);}
   .project--steel{--accent:var(--steel);}
   .project--rose{--accent:var(--rose);}
+  .project--sage{--accent:var(--sage);}
   .project-inner{max-width:var(--maxw); margin:0 auto; padding:56px 24px;}
   .project-eyebrow{color:var(--accent); font-size:0.88rem; font-weight:500; margin:0 0 10px;}
   .project h2{margin-bottom:14px;}
@@ -246,6 +248,7 @@
     <nav class="navlinks">
       <a href="#about">About</a>
       <a href="#fraud">Fraud controls</a>
+      <a href="#fda">Drug shortages</a>
       <a href="#customer">Retail revenue</a>
       <a href="#loan">Loan risk</a>
       <a href="#inventory">Inventory</a>
@@ -259,8 +262,8 @@
 
   <section class="hero wrap" id="top">
     <p class="kicker">Data analyst portfolio</p>
-    <h1>Four data problems,<br>worked end to end.</h1>
-    <p class="lede">I'm a data analyst who works across the full pipeline — raw files and SQL at one end, a dashboard someone actually opens at the other. <span class="muted-inline">SQL, Excel, Python, Databricks, Alteryx, Power BI and Tableau, applied to payment fraud controls, retail revenue, lending risk, and inventory data.</span></p>
+    <h1>Five data problems,<br>worked end to end.</h1>
+    <p class="lede">I'm a data analyst who works across the full pipeline — raw files and SQL at one end, a dashboard someone actually opens at the other. <span class="muted-inline">SQL, PostgreSQL, Excel, Python, Databricks, Alteryx, Power BI and Tableau, applied to payment fraud controls, drug shortages, retail revenue, lending risk, and inventory data.</span></p>
     <p class="availability"><span class="open-dot"></span>Noida, India · Open to relocation · Available to join immediately</p>
     <div class="cta-row">
       <a href="#fraud" class="btn primary">View the projects</a>
@@ -328,7 +331,7 @@
   <section class="wrap" id="skills">
     <div class="section-head">
       <h2>What I work with</h2>
-      <p class="section-sub">Pulled straight from the tools actually used across the four projects below — nothing listed here that isn't demonstrated in a repo.</p>
+      <p class="section-sub">Pulled straight from the tools actually used across the five projects below — nothing listed here that isn't demonstrated in a repo.</p>
     </div>
     <div class="skills-groups">
       <div class="skill-group">
@@ -336,6 +339,7 @@
         <div class="chip-row">
           <span class="chip">Python</span>
           <span class="chip">Pandas &amp; NumPy</span>
+          <span class="chip">PostgreSQL</span>
           <span class="chip">SQL Server (T-SQL)</span>
           <span class="chip">MySQL</span>
           <span class="chip">Snowflake SQL</span>
@@ -350,7 +354,8 @@
           <span class="chip">Tableau (LOD expressions, data blending)</span>
           <span class="chip">Tableau Cloud (publishing &amp; permissions)</span>
           <span class="chip">Power Query</span>
-          <span class="chip">Excel (PivotTables, XLOOKUP)</span>
+          <span class="chip">Excel (PivotTables, XLOOKUP, scoring models)</span>
+          <span class="chip">Google Sheets (QUERY, FILTER, pivot tables)</span>
           <span class="chip">PowerPoint</span>
           <span class="chip">Alteryx Designer</span>
           <span class="chip">Jupyter Notebook</span>
@@ -366,6 +371,8 @@
           <span class="chip">Data-quality remediation</span>
           <span class="chip">Cross-tool reconciliation (SQL ↔ Alteryx, Tableau ↔ Snowflake)</span>
           <span class="chip">Pseudonymization (salted hashing)</span>
+          <span class="chip">PostgreSQL design (keys, CHECK constraints)</span>
+          <span class="chip">Roles, backup &amp; restore, audit triggers</span>
         </div>
       </div>
       <div class="skill-group">
@@ -377,6 +384,8 @@
           <span class="chip">Classification models (scikit-learn)</span>
           <span class="chip">Time-series forecasting</span>
           <span class="chip">Local GenAI classification (Ollama / Qwen3:4B)</span>
+          <span class="chip">LLM extraction accuracy check</span>
+          <span class="chip">Hypothesis testing (Fisher's exact test)</span>
         </div>
       </div>
     </div>
@@ -442,6 +451,67 @@
   </section>
 
   <!-- PROJECT 1: Customer Revenue & Retention -->
+  <!-- PROJECT: FDA Drug Shortages -->
+  <section class="project project--sage" id="fda">
+    <div class="project-inner">
+      <p class="project-eyebrow">Healthcare data · PostgreSQL, Google Sheets, Excel, Python, local GenAI</p>
+      <h2>FDA Drug Shortage Analysis</h2>
+      <p class="project-problem">Which US drugs are in shortage, for how long, and can the data behind the answer be trusted? Using the FDA Drug Shortages list (1,605 records, public domain), I analysed it in Google Sheets, rebuilt it as a PostgreSQL database run like a small production system, tested how accurately a local AI model reads the list's free-text notes, and wrote an oncology brief that adds FDA's NDC Directory.</p>
+
+      <div class="kpi-row">
+        <div class="kpi"><div class="kpi-num mono">69</div><div class="kpi-label">Drugs in current shortage, across 1,141 product records</div></div>
+        <div class="kpi"><div class="kpi-num mono">4.9 yrs</div><div class="kpi-label">Median time a current shortage has been on the FDA list</div></div>
+        <div class="kpi"><div class="kpi-num mono">23</div><div class="kpi-label">Database data-quality checks; all 15 headline totals match the Sheets analysis</div></div>
+        <div class="kpi"><div class="kpi-num mono">57 / 60</div><div class="kpi-label">Recovery dates the local LLM extracted correctly, checked against rule-based labels</div></div>
+      </div>
+
+      <div class="shot-grid">
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/FDA-Drug-Shortage-Analysis/raw/main/screenshots/03_chart_therapeutic_areas.png" alt="Chart of drugs in current shortage by therapeutic area, with Pediatric the most widely affected" loading="lazy"></div>
+          <figcaption>Therapeutic areas — Pediatric medicines are the most widely affected (17 of 69 drugs)</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/FDA-Drug-Shortage-Analysis/raw/main/screenshots/09_ai_check.png" alt="Google Sheets comparison of Qwen3 extractions against rule-based reference labels" loading="lazy"></div>
+          <figcaption>AI extraction check — Qwen3 4B against rule-based labels, every disagreement reviewed</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/FDA-Drug-Shortage-Analysis/raw/main/database/screenshots/10_post_refresh_checks.png" alt="psql output of the post-refresh checks, all passing" loading="lazy"></div>
+          <figcaption>PostgreSQL — checks after applying a newer FDA download, every change logged by an audit trigger</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/FDA-Drug-Shortage-Analysis/raw/main/oncology_brief/screenshots/05_output_market_entry.png" alt="Excel model output ranking oncology drugs in shortage under the market entry view" loading="lazy"></div>
+          <figcaption>Oncology brief — Excel scoring model with adjustable weights and two views</figcaption>
+        </figure>
+      </div>
+
+      <div class="demonstrates">
+        <h3>What this shows</h3>
+        <ul>
+          <li>Cleaned the FDA list with formulas in a separate tab so the raw import was never edited, counted distinct drugs as well as product records, and logged every check. Counting records alone would have hidden that Pediatric medicines are the most widely affected area.</li>
+          <li>Built a normalised PostgreSQL database: 6 tables with primary and foreign keys, CHECK rules and a natural-key UNIQUE constraint. PostgreSQL refused the raw file over blank lines and 4 unescaped inch marks that Google Sheets had accepted, so a script writes a corrected copy for loading.</li>
+          <li>Ran 23 logged data-quality checks, set up a read-only analyst role limited to four reporting views, tested indexes with EXPLAIN ANALYZE, and verified a pg_dump backup by restoring it and comparing a checksum of every record.</li>
+          <li>Applied a newer FDA download in one transaction with an audit trigger: 39 records updated, 2 deleted, and the database matched the new file exactly afterwards.</li>
+          <li>Tested a local LLM (Qwen3 4B via Ollama) on 60 sampled notes: 57 of 60 recovery dates matched. A format check caught two broken dates, but only the comparison with a reference caught the date it missed.</li>
+          <li>Ran Fisher's exact test at the drug level: pediatric drugs are not significantly more likely to have a fully unavailable product (p = 0.27).</li>
+          <li>Built an oncology brief combining the shortage list with 216 marketed products from FDA's NDC Directory, in an Excel model with adjustable weights. Flurazepam, a sleep medicine tagged Oncology by FDA, was kept in the data but excluded from scoring.</li>
+        </ul>
+        <p class="recommend"><strong>What I'd recommend:</strong> Shortlist streptozocin and pentostatin, which have no generic supplier, for a feasibility study; in crowded markets such as carboplatin, compete on reliable supply rather than entry; and re-run the screen monthly as the list changes.</p>
+      </div>
+
+      <div class="project-footer">
+        <div class="tool-tags">
+          <span class="chip">PostgreSQL</span><span class="chip">SQL</span><span class="chip">Google Sheets</span><span class="chip">Excel</span><span class="chip">Python</span><span class="chip">Ollama / Qwen3:4B</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/beingbrute/FDA-Drug-Shortage-Analysis" target="_blank" rel="noopener">View repository</a> · also see the
+          <a href="https://github.com/beingbrute/FDA-Drug-Shortage-Analysis/blob/main/database/README.md" target="_blank" rel="noopener">database write-up</a>,
+          <a href="https://github.com/beingbrute/FDA-Drug-Shortage-Analysis/blob/main/oncology_brief/README.md" target="_blank" rel="noopener">oncology brief</a> and
+          <a href="https://github.com/beingbrute/FDA-Drug-Shortage-Analysis/blob/main/database/documentation/hypothesis_test.md" target="_blank" rel="noopener">hypothesis test</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="project project--teal" id="customer">
     <div class="project-inner">
       <p class="project-eyebrow">Retail analytics · Python, Snowflake, Tableau (LOD, data blending, Cloud), local GenAI</p>
@@ -624,7 +694,7 @@
   <section class="wrap" id="compare">
     <div class="section-head">
       <h2>Compare the work</h2>
-      <p class="section-sub">The same skill set applied four different ways — a cloud risk-and-controls pipeline, cloud warehousing plus Tableau, the Microsoft BI stack, and a migration bridging both.</p>
+      <p class="section-sub">The same skill set applied five different ways — a cloud risk-and-controls pipeline, a PostgreSQL database built around public health data, cloud warehousing plus Tableau, the Microsoft BI stack, and a migration bridging both.</p>
     </div>
     <p class="compare-hint">Click a project name to isolate what it actually used.</p>
 
@@ -634,30 +704,34 @@
           <tr>
             <th>Skill / technique</th>
             <th class="center" data-key="f">Fraud Controls</th>
+            <th class="center" data-key="d">Drug Shortages</th>
             <th class="center" data-key="c">Revenue &amp; Retention</th>
             <th class="center" data-key="l">Loan Default Risk</th>
             <th class="center" data-key="i">Inventory</th>
           </tr>
         </thead>
         <tbody>
-          <tr data-f="1" data-c="1" data-l="0" data-i="0"><td>Python &amp; Pandas</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-c="1" data-l="0" data-i="1"><td>SQL (Databricks / Snowflake / SQL Server / MySQL)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
-          <tr data-f="1" data-c="0" data-l="1" data-i="1"><td>Power BI &amp; DAX</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td></tr>
-          <tr data-f="0" data-c="0" data-l="1" data-i="0"><td>Power BI row-level security &amp; star schema</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-c="1" data-l="0" data-i="0"><td>Tableau</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-c="1" data-l="0" data-i="0"><td>Tableau LOD expressions &amp; data blending</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-c="1" data-l="0" data-i="0"><td>Tableau Cloud publishing &amp; permissions</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-c="1" data-l="0" data-i="0"><td>Cloud data warehousing (layered / medallion)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-c="0" data-l="0" data-i="1"><td>Database migration</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
-          <tr data-f="0" data-c="1" data-l="0" data-i="0"><td>Local GenAI / LLM classification</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-c="1" data-l="0" data-i="0"><td>RFM &amp; cohort retention analysis</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-c="0" data-l="0" data-i="1"><td>Data-quality remediation (simulated production)</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
-          <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Excel workpaper</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Databricks &amp; PySpark</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Alteryx</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Control testing &amp; data assurance</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Machine learning (scikit-learn)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-c="0" data-l="0" data-i="0"><td>Time-series forecasting</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-d="1" data-c="1" data-l="0" data-i="0"><td>Python &amp; Pandas</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-d="1" data-c="1" data-l="0" data-i="1"><td>SQL (Databricks / Snowflake / SQL Server / MySQL / PostgreSQL)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-f="1" data-d="0" data-c="0" data-l="1" data-i="1"><td>Power BI &amp; DAX</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-f="0" data-d="0" data-c="0" data-l="1" data-i="0"><td>Power BI row-level security &amp; star schema</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-d="0" data-c="1" data-l="0" data-i="0"><td>Tableau</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-d="0" data-c="1" data-l="0" data-i="0"><td>Tableau LOD expressions &amp; data blending</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-d="0" data-c="1" data-l="0" data-i="0"><td>Tableau Cloud publishing &amp; permissions</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-d="0" data-c="1" data-l="0" data-i="0"><td>Cloud data warehousing (layered / medallion)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-d="0" data-c="0" data-l="0" data-i="1"><td>Database migration</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-f="0" data-d="1" data-c="1" data-l="0" data-i="0"><td>Local GenAI / LLM classification &amp; extraction</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-d="0" data-c="1" data-l="0" data-i="0"><td>RFM &amp; cohort retention analysis</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-d="0" data-c="0" data-l="0" data-i="1"><td>Data-quality remediation (simulated production)</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-f="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Excel workpaper</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Databricks &amp; PySpark</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Alteryx</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Control testing &amp; data assurance</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Machine learning (scikit-learn)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Time-series forecasting</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-d="1" data-c="0" data-l="0" data-i="0"><td>PostgreSQL design, roles, backup &amp; audit trail</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-d="1" data-c="0" data-l="0" data-i="0"><td>Google Sheets analysis &amp; Excel scoring model</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-f="0" data-d="1" data-c="0" data-l="0" data-i="0"><td>Hypothesis testing</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -679,6 +753,13 @@
               <td>PaySim (public, synthetic) · 6,362,620 transactions, 8,213 frauds</td>
               <td>Databricks + SQL + Alteryx</td>
               <td>Best control reached 70.46% precision against a 0.13% baseline; a perfect-scoring model was flagged as leakage, not reported as a win</td>
+            </tr>
+            <tr>
+              <td>FDA Drug Shortages</td>
+              <td>Which drugs are short, for how long, and can the data and an AI model be trusted?</td>
+              <td>FDA Drug Shortages list (public) · 1,605 records; FDA NDC Directory for the oncology brief</td>
+              <td>PostgreSQL + Google Sheets + Excel</td>
+              <td>69 drugs in current shortage, median 4.9 years on the list; the local LLM matched 57 of 60 recovery dates</td>
             </tr>
             <tr>
               <td>Revenue &amp; Retention</td>
@@ -712,7 +793,7 @@
 <footer id="contact">
   <div class="footer-inner">
     <h2>Get in touch</h2>
-    <p class="footer-sub">Open to Data Analyst, BI Analyst, Power BI Developer, Tableau Developer, Data Quality, and risk &amp; data-assurance analytics roles. Based in Noida, open to relocation, available to join immediately. The four repositories above are public — clone them, open the dashboards, or check the SQL directly.</p>
+    <p class="footer-sub">Open to Data Analyst, BI Analyst, Power BI Developer, Tableau Developer, Data Quality, and risk &amp; data-assurance analytics roles. Based in Noida, open to relocation, available to join immediately. The five repositories above are public — clone them, open the dashboards, or check the SQL directly.</p>
     <div class="contact-row">
       <a href="mailto:adityaranjan17302215@gmail.com" class="btn primary">adityaranjan17302215@gmail.com</a>
       <a href="tel:+918299744947" class="btn">+91 82997 44947</a>
@@ -774,7 +855,7 @@
   (function(){
     var note = document.getElementById('source-note');
     if(!note) return;
-    note.textContent = 'Source-checked · October 2026';
+    note.textContent = 'Source-checked · November 2026';
   })();
 
   // Compare matrix: click a project column to isolate it

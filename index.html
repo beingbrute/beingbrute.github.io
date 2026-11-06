@@ -58,11 +58,12 @@
   }
   .navrow{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:var(--maxw); margin:0 auto;}
   .wordmark{font-weight:600; font-size:1.05rem; letter-spacing:0.01em;}
-  .navlinks{display:flex; gap:28px; font-size:0.92rem;}
+  .navlinks{display:flex; gap:22px; font-size:0.92rem;}
   .navlinks a{color:var(--muted); transition:color .15s ease;}
   .navlinks a:hover{color:var(--text);}
   .navlinks{display:none;}
-  @media(min-width:720px){ .navlinks{display:flex;} }
+  .navlinks a{white-space:nowrap;}
+  @media(min-width:1000px){ .navlinks{display:flex;} }
 
   /* Hero */
   .hero{padding:76px 24px 40px;}

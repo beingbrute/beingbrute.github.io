@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aditya Ranjan — Data Analyst | SQL, Excel, Power BI, Tableau, Python, Databricks</title>
-<meta name="description" content="Data analyst portfolio by Aditya Ranjan — SQL, Excel, Python, Databricks, Alteryx, Power BI, Tableau and Snowflake. Case studies in payment fraud controls, FDA drug shortages, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply. Based in Noida, open to relocation, available immediately.">
+<meta name="description" content="Data analyst portfolio by Aditya Ranjan — SQL, Excel, Python, Databricks, Alteryx, Power BI, Tableau and Snowflake. Case studies in CDD risk decisioning, payment fraud controls, data-quality automation, FDA drug shortages, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply. Based in Noida, open to relocation, available immediately.">
 <meta name="author" content="Aditya Ranjan">
 <meta property="og:title" content="Aditya Ranjan — Data Analyst Portfolio">
-<meta property="og:description" content="Five data problems worked end to end: payment fraud controls, FDA drug shortages, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply.">
+<meta property="og:description" content="Seven data problems worked end to end: CDD risk decisioning, payment fraud controls, data-quality automation, FDA drug shortages, retail revenue &amp; retention, loan default risk, and inventory demand &amp; supply.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +25,8 @@
     --steel:#89a3d8;
     --rose:#e58a8a;
     --sage:#9cc48a;
+    --violet:#a99be0;
+    --sky:#7fbfe0;
     --maxw:960px;
   }
   *{box-sizing:border-box;}
@@ -64,6 +66,9 @@
   .navlinks{display:none;}
   .navlinks a{white-space:nowrap;}
   @media(min-width:1000px){ .navlinks{display:flex;} }
+  @media(min-width:1000px) and (max-width:1199px){ .navlinks{gap:12px; font-size:0.82rem;} }
+  @media(min-width:1200px) and (max-width:1399px){ .navlinks{gap:16px; font-size:0.88rem;} }
+  .wordmark{white-space:nowrap; margin-right:24px;}
 
   /* Hero */
   .hero{padding:76px 24px 40px;}
@@ -130,6 +135,8 @@
   .project--steel{--accent:var(--steel);}
   .project--rose{--accent:var(--rose);}
   .project--sage{--accent:var(--sage);}
+  .project--violet{--accent:var(--violet);}
+  .project--sky{--accent:var(--sky);}
   .project-inner{max-width:var(--maxw); margin:0 auto; padding:56px 24px;}
   .project-eyebrow{color:var(--accent); font-size:0.88rem; font-weight:500; margin:0 0 10px;}
   .project h2{margin-bottom:14px;}
@@ -248,7 +255,9 @@
     <div class="wordmark">Aditya Ranjan</div>
     <nav class="navlinks">
       <a href="#about">About</a>
+      <a href="#cdd">CDD risk</a>
       <a href="#fraud">Fraud controls</a>
+      <a href="#dq">Data quality</a>
       <a href="#fda">Drug shortages</a>
       <a href="#customer">Retail revenue</a>
       <a href="#loan">Loan risk</a>
@@ -263,16 +272,20 @@
 
   <section class="hero wrap" id="top">
     <p class="kicker">Data analyst portfolio</p>
-    <h1>Five data problems,<br>worked end to end.</h1>
-    <p class="lede">I'm a data analyst who works across the full pipeline — raw files and SQL at one end, a dashboard someone actually opens at the other. <span class="muted-inline">SQL, PostgreSQL, Excel, Python, Databricks, Alteryx, Power BI and Tableau, applied to payment fraud controls, drug shortages, retail revenue, lending risk, and inventory data.</span></p>
+    <h1>Seven data problems,<br>worked end to end.</h1>
+    <p class="lede">I'm a data analyst who works across the full pipeline — raw files and SQL at one end, a dashboard someone actually opens at the other. <span class="muted-inline">SQL, PostgreSQL, Excel, Python, Databricks, Snowflake, Alteryx, Power BI and Tableau, applied to customer due diligence, payment fraud controls, data-quality automation, drug shortages, retail revenue, lending risk, and inventory data.</span></p>
     <p class="availability"><span class="open-dot"></span>Noida, India · Open to relocation · Available to join immediately</p>
     <div class="cta-row">
-      <a href="#fraud" class="btn primary">View the projects</a>
+      <a href="#cdd" class="btn primary">View the projects</a>
       <a href="Aditya_Ranjan_Data_Analyst.pdf?v=2026-11-07" class="btn" target="_blank" rel="noopener">Download resume</a>
       <a href="https://github.com/beingbrute" class="btn" target="_blank" rel="noopener">GitHub profile</a>
     </div>
 
     <div class="proof-strip">
+      <a href="#cdd" class="proof">
+        <div class="proof-num" data-count data-target="33" data-decimals="0" data-suffix="%">33%</div>
+        <div class="proof-desc">fewer CDD review cases flagged than the rules on an untouched test month, catching 63 of 92 escalations vs 67</div>
+      </a>
       <a href="#fraud" class="proof">
         <div class="proof-num" data-count data-target="70.46" data-decimals="2" data-suffix="%">70.46%</div>
         <div class="proof-desc">precision from the best fraud control, against a 0.13% baseline fraud rate across 6.36M transactions</div>
@@ -280,10 +293,6 @@
       <a href="#customer" class="proof">
         <div class="proof-num" data-count data-target="72.35" data-decimals="2" data-suffix="%">72.35%</div>
         <div class="proof-desc">of known customers are repeat buyers — and they account for 96.74% of identified-customer sales</div>
-      </a>
-      <a href="#loan" class="proof">
-        <div class="proof-num" data-count data-target="11.61" data-decimals="2" data-suffix="%">11.61%</div>
-        <div class="proof-desc">portfolio-wide default rate across 255,347 loans, rising to 19.71% in the riskiest segment</div>
       </a>
       <a href="#inventory" class="proof">
         <div class="proof-num" data-count data-target="97.37" data-decimals="2" data-prefix="$" data-suffix="K">$97.37K</div>
@@ -299,7 +308,7 @@
         <p>I graduated with a B.Tech in Computer Science in 2023 and I'm building my career in data analytics. I like connecting the technical work — cleaning data, writing queries, building models — to the actual business question it needs to answer.</p>
         <p>I currently hold a contract role at Innodata evaluating AI-generated dashboards, charts and reports for accuracy — which has made me considerably more careful about the details in my own work.</p>
         <p>I'm HackerRank certified in SQL (Advanced), Python (Basic) and R (Intermediate), with 5-star Gold badges in SQL and Python — <a href="https://www.hackerrank.com/profile/adityaranjann1" target="_blank" rel="noopener" style="color:var(--teal);border-bottom:1px solid transparent">verify on HackerRank</a>.</p>
-        <p>I'm looking for a Data Analyst, BI Analyst, Tableau or Power BI Developer, or risk and data-assurance analytics role where I can contribute with SQL, Python, Excel, Tableau, Power BI and reporting that people actually use.</p>
+        <p>I'm looking for a Data Analyst, BI Analyst, Tableau or Power BI Developer, CDD / KYC analytics, or risk and data-assurance analytics role where I can contribute with SQL, Python, Excel, Tableau, Power BI and reporting that people actually use.</p>
         <a href="https://github.com/beingbrute" class="about-link" target="_blank" rel="noopener">Explore my GitHub</a>
         <div class="open-badge"><span class="open-dot"></span>Open to full-time and contract roles · Immediate joiner</div>
       </div>
@@ -332,7 +341,7 @@
   <section class="wrap" id="skills">
     <div class="section-head">
       <h2>What I work with</h2>
-      <p class="section-sub">Pulled straight from the tools actually used across the five projects below — nothing listed here that isn't demonstrated in a repo.</p>
+      <p class="section-sub">Pulled straight from the tools actually used across the seven projects below — nothing listed here that isn't demonstrated in a repo.</p>
     </div>
     <div class="skills-groups">
       <div class="skill-group">
@@ -361,6 +370,10 @@
           <span class="chip">Alteryx Designer</span>
           <span class="chip">Jupyter Notebook</span>
           <span class="chip">Git &amp; GitHub</span>
+          <span class="chip">GitHub Actions (CI)</span>
+          <span class="chip">pytest</span>
+          <span class="chip">Power Automate Desktop</span>
+          <span class="chip">Windows Task Scheduler</span>
         </div>
       </div>
       <div class="skill-group">
@@ -374,6 +387,8 @@
           <span class="chip">Pseudonymization (salted hashing)</span>
           <span class="chip">PostgreSQL design (keys, CHECK constraints)</span>
           <span class="chip">Roles, backup &amp; restore, audit triggers</span>
+          <span class="chip">PostgreSQL pipeline (RAW/STAGING/ANALYTICS)</span>
+          <span class="chip">Config-driven data-quality engine (YAML)</span>
         </div>
       </div>
       <div class="skill-group">
@@ -387,6 +402,71 @@
           <span class="chip">Local GenAI classification (Ollama / Qwen3:4B)</span>
           <span class="chip">LLM extraction accuracy check</span>
           <span class="chip">Hypothesis testing (Fisher's exact test)</span>
+          <span class="chip">CDD rules mapped to UK regulation (MLR 2017)</span>
+          <span class="chip">Point-in-time FATF country risk</span>
+          <span class="chip">Time-based model validation &amp; calibration</span>
+          <span class="chip">PSI drift &amp; performance monitoring</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT: CDD Risk Decisioning & Model Monitoring -->
+  <section class="project project--violet" id="cdd">
+    <div class="project-inner">
+      <p class="project-eyebrow">CDD &amp; risk decisioning · PostgreSQL, Python, scikit-learn, pytest, GitHub Actions, Power BI</p>
+      <h2>CDD Risk Decisioning &amp; Model Monitoring</h2>
+      <p class="project-problem">Which customers need enhanced due diligence or a review, can each decision be explained against UK regulation, and can a model rank review cases better than the rules without seeing anything that wasn't known on the review date? On a synthetic portfolio of 5,000 customers and 6,222 review cases in 2025, with the real FATF lists in force during 2025, I built the pipeline, the rules, a review queue, a validated model and its monitoring.</p>
+
+      <div class="kpi-row">
+        <div class="kpi"><div class="kpi-num mono">67 / 67</div><div class="kpi-label">Planted KYC data errors found by 11 checks, none missed and none extra</div></div>
+        <div class="kpi"><div class="kpi-num mono">2,438</div><div class="kpi-label">Flagged customers ranked P1 to P3 with reason codes and next actions</div></div>
+        <div class="kpi"><div class="kpi-num mono">0.792</div><div class="kpi-label">Test AUC on an untouched month (95% CI 0.742 to 0.840)</div></div>
+        <div class="kpi"><div class="kpi-num mono">57</div><div class="kpi-label">Automated tests, run on every push in GitHub Actions from an empty database</div></div>
+      </div>
+
+      <div class="shot-grid">
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/CDD-Risk-Decisioning-Model-Monitoring/raw/main/docs/screenshots/dashboard_review_queue.png" alt="Power BI review queue page with customers by priority, rule hits per rule and the ranked queue with reason codes" loading="lazy"></div>
+          <figcaption>Review queue — P1 to P3 priorities, why customers are flagged, next actions</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/CDD-Risk-Decisioning-Model-Monitoring/raw/main/docs/screenshots/dashboard_rules_country.png" alt="Power BI page with lift by rule and a matrix of FATF status for each jurisdiction across four list versions" loading="lazy"></div>
+          <figcaption>Rules and country risk — lift by rule, FATF status by list version</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/CDD-Risk-Decisioning-Model-Monitoring/raw/main/docs/screenshots/dashboard_model_monitoring.png" alt="Power BI page comparing model and rules workload and recall, monthly AUC, PSI drift and monthly status" loading="lazy"></div>
+          <figcaption>Model and monitoring — workload vs recall, AUC by month, drift</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/CDD-Risk-Decisioning-Model-Monitoring/raw/main/docs/screenshots/dashboard_data_quality.png" alt="Power BI data quality page with 11 checks, 67 records to fix and the exception list" loading="lazy"></div>
+          <figcaption>Data quality — 11 checks and the exact records to fix</figcaption>
+        </figure>
+      </div>
+
+      <div class="demonstrates">
+        <h3>What this shows</h3>
+        <ul>
+          <li>Built a PostgreSQL pipeline in three schemas: RAW as delivered, STAGING typed with nothing silently corrected, and ANALYTICS. Row counts reconcile between layers, and 11 KYC data-quality checks matched all 67 planted errors.</li>
+          <li>Wrote 12 CDD rules, each mapped to its UK legal basis (Money Laundering Regulations 2017 regs. 5, 28, 33 and 35, and the UK sanctions regime) and labelled as statutory, bank judgement or an illustrative threshold. Since SI 2024/69, UK high-risk third countries follow the FATF lists, so country status is checked on each review date: Nigeria triggers enhanced due diligence before its removal on 24 October 2025, and not after.</li>
+          <li>Ranked 2,438 flagged customers into P1 to P3 (every unresolved sanctions match is P1) and measured each rule's precision, recall and lift against analyst escalations. The activity rules reached lift above 2; the PEP rule stayed below 1 and stays in place, because enhanced due diligence for PEPs is required by law.</li>
+          <li>Compared logistic regression, a random forest and the rules under a protocol fixed in advance: train January to June, choose the model and threshold on July and August, test once on September, monitor October to December. Rules, model inputs and the simulated analyst outcome share one information cutoff. In September the model flagged 173 cases against 257 for the rules, catching 63 of 92 escalations against 67.</li>
+          <li>Monitored drift (PSI) and AUC every month. Online customers' cross-border activity moved from October (PSI 0.10 to 0.29) while the model's score and monthly AUC (0.785 to 0.813) held, so the pre-set rule called for investigation rather than retraining.</li>
+          <li>Logged six defects, including PostgreSQL's GREATEST() turning missing history into "very low turnover" (caught when a drift alert fired before any drift existed) and a leak an independent review found in the rules baseline. Each was fixed, re-run and covered by a regression test.</li>
+        </ul>
+        <p class="recommend"><strong>What I'd recommend:</strong> Correct the 67 records, clear P1 cases first, use the model to order the queue alongside the statutory rules rather than replace them, and investigate the Online cross-border change before deciding on retraining.</p>
+      </div>
+
+      <div class="project-footer">
+        <div class="tool-tags">
+          <span class="chip">PostgreSQL</span><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">scikit-learn</span><span class="chip">pytest</span><span class="chip">GitHub Actions</span><span class="chip">Power BI</span><span class="chip">DAX</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/beingbrute/CDD-Risk-Decisioning-Model-Monitoring" target="_blank" rel="noopener">View repository</a> · also see the
+          <a href="https://github.com/beingbrute/CDD-Risk-Decisioning-Model-Monitoring/blob/main/reports/model_validation.md" target="_blank" rel="noopener">model validation report</a>,
+          <a href="https://github.com/beingbrute/CDD-Risk-Decisioning-Model-Monitoring/blob/main/reports/monitoring.md" target="_blank" rel="noopener">monitoring report</a>,
+          <a href="https://github.com/beingbrute/CDD-Risk-Decisioning-Model-Monitoring/blob/main/docs/stakeholder_memo.md" target="_blank" rel="noopener">stakeholder memo</a> and
+          <a href="https://github.com/beingbrute/CDD-Risk-Decisioning-Model-Monitoring/blob/main/docs/test_plan.md" target="_blank" rel="noopener">test plan</a>.
         </div>
       </div>
     </div>
@@ -446,6 +526,62 @@
           <a href="https://public.tableau.com/app/profile/aditya.ranjan7019/viz/PaymentFraudRiskAnalytics-PaySim/FraudAnalyticsDashboard" target="_blank" rel="noopener">Explore the Tableau dashboard</a> · <a href="https://github.com/beingbrute/payment-fraud-risk-analytics" target="_blank" rel="noopener">View repository</a> · also see the
           <a href="https://github.com/beingbrute/payment-fraud-risk-analytics/blob/main/docs/research_memo.md" target="_blank" rel="noopener">research memo</a> and
           <a href="https://github.com/beingbrute/payment-fraud-risk-analytics/blob/main/excel/control_testing_workpaper.xlsx" target="_blank" rel="noopener">control-testing workpaper</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT: Business Data Quality Automation -->
+  <section class="project project--sky" id="dq">
+    <div class="project-inner">
+      <p class="project-eyebrow">Data quality &amp; automation · Python, YAML, pytest, Power Automate Desktop, Excel, Windows Task Scheduler</p>
+      <h2>Business Data Quality Automation</h2>
+      <p class="project-problem">Sales records collect errors over time: the same company under two IDs, blank required fields, statuses like "Actve", close dates before created dates, opportunities linked to accounts that don't exist. I built a rule-based check that runs every day without anyone starting it and writes an Excel report of exactly which rows to fix. The data is synthetic, with 90 planted errors kept as an answer key.</p>
+
+      <div class="kpi-row">
+        <div class="kpi"><div class="kpi-num mono">90 / 90</div><div class="kpi-label">Planted errors found record for record, with nothing else flagged</div></div>
+        <div class="kpi"><div class="kpi-num mono">13</div><div class="kpi-label">Checks defined in a YAML file across 8 rule types, not hard-coded</div></div>
+        <div class="kpi"><div class="kpi-num mono">15 + 17</div><div class="kpi-label">pytest tests and test-plan cases, all passing</div></div>
+        <div class="kpi"><div class="kpi-num mono">4</div><div class="kpi-label">Defects found in testing and fixed, including "N/A" read as blank</div></div>
+      </div>
+
+      <div class="shot-grid">
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Business-Data-Quality-Automation/raw/main/docs/screenshots/excel_summary.png" alt="Excel summary sheet listing 13 checks with failed row counts and status colours" loading="lazy"></div>
+          <figcaption>Excel report — summary of all 13 checks</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Business-Data-Quality-Automation/raw/main/docs/screenshots/excel_exceptions.png" alt="Excel sheet listing the exact failing rows for the invalid status check" loading="lazy"></div>
+          <figcaption>Exception sheet — the exact rows to fix for one check</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Business-Data-Quality-Automation/raw/main/docs/screenshots/pad_flow_1.png" alt="Power Automate Desktop flow running the Python check and handling its exit code" loading="lazy"></div>
+          <figcaption>Power Automate Desktop — runs the check and handles failures</figcaption>
+        </figure>
+        <figure>
+          <div class="shot-frame"><img src="https://github.com/beingbrute/Business-Data-Quality-Automation/raw/main/docs/screenshots/scheduled_run.png" alt="Run log showing the scheduled daily data-quality runs" loading="lazy"></div>
+          <figcaption>Scheduled runs — the daily check logged by Windows Task Scheduler</figcaption>
+        </figure>
+      </div>
+
+      <div class="demonstrates">
+        <h3>What this shows</h3>
+        <ul>
+          <li>Built a validation engine in Python (pandas) that reads its checks from a YAML file: required fields, allowed values, patterns, ranges, duplicate keys and names, referential integrity and date order. Each run writes an Excel report with one sheet of failing rows per check, plus a history log.</li>
+          <li>The run stops with exit code 2 and a clear log message if a config file, data file or column is missing, so the automation around it can react instead of carrying on with bad input.</li>
+          <li>Built a Power Automate Desktop flow that runs the check, logs failures with their reason, files each report into a dated folder, reads the Excel summary and logs the result. The free version cannot schedule flows, so the Python check runs daily at 09:00 from Windows Task Scheduler, set to run on battery, wake the laptop and catch up after a missed run.</li>
+          <li>Tested with 15 pytest tests (answer-key match, clean data, edge cases such as amount 0 vs 0.01 and probability 100 vs 101, missing files) and a 17-case test plan. Logged four defects, including pandas silently reading the text "N/A" as a blank value.</li>
+        </ul>
+      </div>
+
+      <div class="project-footer">
+        <div class="tool-tags">
+          <span class="chip">Python</span><span class="chip">pandas</span><span class="chip">YAML</span><span class="chip">pytest</span><span class="chip">Power Automate Desktop</span><span class="chip">Excel</span><span class="chip">Task Scheduler</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/beingbrute/Business-Data-Quality-Automation" target="_blank" rel="noopener">View repository</a> · also see the
+          <a href="https://github.com/beingbrute/Business-Data-Quality-Automation/blob/main/docs/test_plan.md" target="_blank" rel="noopener">test plan</a> and
+          <a href="https://github.com/beingbrute/Business-Data-Quality-Automation/blob/main/docs/sample_report.xlsx" target="_blank" rel="noopener">sample exception report</a>.
         </div>
       </div>
     </div>
@@ -695,7 +831,7 @@
   <section class="wrap" id="compare">
     <div class="section-head">
       <h2>Compare the work</h2>
-      <p class="section-sub">The same skill set applied five different ways — a cloud risk-and-controls pipeline, a PostgreSQL database built around public health data, cloud warehousing plus Tableau, the Microsoft BI stack, and a migration bridging both.</p>
+      <p class="section-sub">The same skill set applied seven different ways — a tested CDD decisioning and model-monitoring pipeline, a cloud risk-and-controls pipeline, an automated data-quality check, a PostgreSQL database built around public health data, cloud warehousing plus Tableau, the Microsoft BI stack, and a migration bridging both.</p>
     </div>
     <p class="compare-hint">Click a project name to isolate what it actually used.</p>
 
@@ -704,7 +840,9 @@
         <thead>
           <tr>
             <th>Skill / technique</th>
+            <th class="center" data-key="k">CDD Risk</th>
             <th class="center" data-key="f">Fraud Controls</th>
+            <th class="center" data-key="q">Data Quality Automation</th>
             <th class="center" data-key="d">Drug Shortages</th>
             <th class="center" data-key="c">Revenue &amp; Retention</th>
             <th class="center" data-key="l">Loan Default Risk</th>
@@ -712,27 +850,31 @@
           </tr>
         </thead>
         <tbody>
-          <tr data-f="1" data-d="1" data-c="1" data-l="0" data-i="0"><td>Python &amp; Pandas</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-d="1" data-c="1" data-l="0" data-i="1"><td>SQL (Databricks / Snowflake / SQL Server / MySQL / PostgreSQL)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
-          <tr data-f="1" data-d="0" data-c="0" data-l="1" data-i="1"><td>Power BI &amp; DAX</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td></tr>
-          <tr data-f="0" data-d="0" data-c="0" data-l="1" data-i="0"><td>Power BI row-level security &amp; star schema</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-d="0" data-c="1" data-l="0" data-i="0"><td>Tableau</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-d="0" data-c="1" data-l="0" data-i="0"><td>Tableau LOD expressions &amp; data blending</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-d="0" data-c="1" data-l="0" data-i="0"><td>Tableau Cloud publishing &amp; permissions</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-d="0" data-c="1" data-l="0" data-i="0"><td>Cloud data warehousing (layered / medallion)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-d="0" data-c="0" data-l="0" data-i="1"><td>Database migration</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
-          <tr data-f="0" data-d="1" data-c="1" data-l="0" data-i="0"><td>Local GenAI / LLM classification &amp; extraction</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-d="0" data-c="1" data-l="0" data-i="0"><td>RFM &amp; cohort retention analysis</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-d="0" data-c="0" data-l="0" data-i="1"><td>Data-quality remediation (simulated production)</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
-          <tr data-f="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Excel workpaper</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Databricks &amp; PySpark</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Alteryx</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Control testing &amp; data assurance</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Machine learning (scikit-learn)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Time-series forecasting</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-d="1" data-c="0" data-l="0" data-i="0"><td>PostgreSQL design, roles, backup &amp; audit trail</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-d="1" data-c="0" data-l="0" data-i="0"><td>Google Sheets analysis &amp; Excel scoring model</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
-          <tr data-f="0" data-d="1" data-c="0" data-l="0" data-i="0"><td>Hypothesis testing</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="1" data-f="1" data-q="1" data-d="1" data-c="1" data-l="0" data-i="0"><td>Python &amp; Pandas</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="1" data-f="1" data-q="0" data-d="1" data-c="1" data-l="0" data-i="1"><td>SQL (Databricks / Snowflake / SQL Server / MySQL / PostgreSQL)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-k="1" data-f="1" data-q="0" data-d="0" data-c="0" data-l="1" data-i="1"><td>Power BI &amp; DAX</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-k="0" data-f="0" data-q="0" data-d="0" data-c="0" data-l="1" data-i="0"><td>Power BI row-level security &amp; star schema</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="1" data-q="0" data-d="0" data-c="1" data-l="0" data-i="0"><td>Tableau</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="0" data-q="0" data-d="0" data-c="1" data-l="0" data-i="0"><td>Tableau LOD expressions &amp; data blending</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="0" data-q="0" data-d="0" data-c="1" data-l="0" data-i="0"><td>Tableau Cloud publishing &amp; permissions</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="1" data-q="0" data-d="0" data-c="1" data-l="0" data-i="0"><td>Cloud data warehousing (layered / medallion)</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="0" data-q="0" data-d="0" data-c="0" data-l="0" data-i="1"><td>Database migration</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-k="0" data-f="0" data-q="0" data-d="1" data-c="1" data-l="0" data-i="0"><td>Local GenAI / LLM classification &amp; extraction</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="0" data-q="0" data-d="0" data-c="1" data-l="0" data-i="0"><td>RFM &amp; cohort retention analysis</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="0" data-q="0" data-d="0" data-c="0" data-l="0" data-i="1"><td>Data-quality remediation (simulated production)</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td></tr>
+          <tr data-k="0" data-f="1" data-q="0" data-d="0" data-c="0" data-l="0" data-i="0"><td>Excel workpaper</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="1" data-q="0" data-d="0" data-c="0" data-l="0" data-i="0"><td>Databricks &amp; PySpark</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="1" data-q="0" data-d="0" data-c="0" data-l="0" data-i="0"><td>Alteryx</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="1" data-f="1" data-q="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Control testing &amp; data assurance</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="1" data-f="1" data-q="0" data-d="0" data-c="0" data-l="0" data-i="0"><td>Machine learning (scikit-learn)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="1" data-q="0" data-d="0" data-c="0" data-l="0" data-i="0"><td>Time-series forecasting</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="0" data-q="0" data-d="1" data-c="0" data-l="0" data-i="0"><td>PostgreSQL design, roles, backup &amp; audit trail</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="0" data-q="0" data-d="1" data-c="0" data-l="0" data-i="0"><td>Google Sheets analysis &amp; Excel scoring model</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="0" data-q="0" data-d="1" data-c="0" data-l="0" data-i="0"><td>Hypothesis testing</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="1" data-f="0" data-q="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Automated testing (pytest) &amp; CI (GitHub Actions)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="0" data-f="0" data-q="1" data-d="0" data-c="0" data-l="0" data-i="0"><td>Workflow automation (Power Automate Desktop, Task Scheduler)</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="1" data-f="0" data-q="0" data-d="0" data-c="0" data-l="0" data-i="0"><td>Rules mapped to regulation (UK MLR 2017, FATF lists)</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
+          <tr data-k="1" data-f="0" data-q="0" data-d="0" data-c="0" data-l="0" data-i="0"><td>Model validation, drift &amp; performance monitoring</td><td class="center"><span class="tick">✓</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -749,11 +891,25 @@
           </thead>
           <tbody>
             <tr>
+              <td>CDD Risk Decisioning</td>
+              <td>Which customers need review, why, and does a model rank cases better than the rules?</td>
+              <td>Synthetic CDD portfolio · 5,000 customers, 6,222 review cases; real FATF lists for 2025</td>
+              <td>PostgreSQL + Python + Power BI</td>
+              <td>67 of 67 planted errors found; on an untouched month the model flagged 173 cases vs 257 for the rules, catching 63 of 92 escalations vs 67</td>
+            </tr>
+            <tr>
               <td>Payment Fraud Controls</td>
               <td>Can the data be trusted, and do the fraud controls work?</td>
               <td>PaySim (public, synthetic) · 6,362,620 transactions, 8,213 frauds</td>
               <td>Databricks + SQL + Alteryx</td>
               <td>Best control reached 70.46% precision against a 0.13% baseline; a perfect-scoring model was flagged as leakage, not reported as a win</td>
+            </tr>
+            <tr>
+              <td>Data Quality Automation</td>
+              <td>Can business-record errors be found every day without anyone starting the check?</td>
+              <td>Synthetic CRM data · 514 accounts, 1,505 opportunities, 90 planted errors</td>
+              <td>Python + Power Automate + Task Scheduler</td>
+              <td>All 90 planted errors found with nothing else flagged; runs daily and files an Excel exception report</td>
             </tr>
             <tr>
               <td>FDA Drug Shortages</td>
@@ -794,7 +950,7 @@
 <footer id="contact">
   <div class="footer-inner">
     <h2>Get in touch</h2>
-    <p class="footer-sub">Open to Data Analyst, BI Analyst, Power BI Developer, Tableau Developer, Data Quality, and risk &amp; data-assurance analytics roles. Based in Noida, open to relocation, available to join immediately. The five repositories above are public — clone them, open the dashboards, or check the SQL directly.</p>
+    <p class="footer-sub">Open to Data Analyst, BI Analyst, Power BI Developer, Tableau Developer, Data Quality, CDD / KYC analytics, and risk &amp; data-assurance analytics roles. Based in Noida, open to relocation, available to join immediately. The seven repositories above are public — clone them, open the dashboards, or check the SQL directly.</p>
     <div class="contact-row">
       <a href="mailto:adityaranjan17302215@gmail.com" class="btn primary">adityaranjan17302215@gmail.com</a>
       <a href="tel:+918299744947" class="btn">+91 82997 44947</a>
